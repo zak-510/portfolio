@@ -87,17 +87,17 @@ const Hero: React.FC = () => {
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 w-full max-w-md mx-auto transform translate-x-4">
             <button
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg"
+              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg w-full sm:w-auto"
             >
               Let's Connect
             </button>
             <a
               href="/Zakaria_Al-Alie_Resume_Technical.pdf"
               download="Zakaria_Al-Alie_Resume_Technical.pdf"
-              className="bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 text-white px-8 py-3 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg border border-gray-500 hover:border-gray-400"
+              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg w-full sm:w-auto text-center"
             >
               Download Resume
             </a>
