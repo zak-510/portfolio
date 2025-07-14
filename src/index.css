@@ -53,6 +53,7 @@ html {
   left: 0;
   width: 100vw;
   height: 100vh;
+  height: 100dvh;
   background: linear-gradient(135deg, #030303 0%, #080808 25%, #030303 50%, #000000 100%);
   overflow: hidden;
   z-index: -10;
