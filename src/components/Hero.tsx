@@ -1,33 +1,43 @@
-import React from 'react';
-import { Github, Linkedin, Code, MapPin, Mail, Phone } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Github, Linkedin, Code, MapPin, Mail, Phone, Instagram } from 'lucide-react';
 
 const Hero: React.FC = () => {
+  const [typewriterText, setTypewriterText] = useState('');
+  const fullText = "Regents' & Chancellor's Scholar at UC Berkeley studying Data Science.\nAspiring AI/ML and Software Engineer for healthcare, environment sustainability, and social impact.";
+  
+  useEffect(() => {
+    let index = 0;
+    const timer = setInterval(() => {
+      if (index < fullText.length) {
+        setTypewriterText(fullText.slice(0, index + 1));
+        index++;
+      } else {
+        clearInterval(timer);
+      }
+    }, 50); // Adjust speed here (lower = faster)
+
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-transparent">
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          {/* Animated Tech Accent */}
-          <div className="mb-12 flex justify-center">
+          {/* Profile Picture */}
+          <div className="mb-8 flex justify-center">
             <div className="relative">
-              {/* Floating code brackets with subtle animation */}
-              <div className="flex items-center space-x-4 text-blue-400 opacity-80">
-                <div className="text-4xl md:text-5xl font-mono animate-pulse">{'<'}</div>
-                <div className="flex flex-col space-y-1">
-                  <div className="h-0.5 w-16 bg-gradient-to-r from-blue-400 to-purple-400 animate-pulse"></div>
-                  <div className="h-0.5 w-12 bg-gradient-to-r from-purple-400 to-blue-400 animate-pulse delay-300"></div>
-                  <div className="h-0.5 w-8 bg-gradient-to-r from-blue-400 to-purple-400 animate-pulse delay-700"></div>
-                </div>
-                <div className="text-4xl md:text-5xl font-mono animate-pulse delay-500">{'/>'}</div>
-              </div>
-              
-              {/* Subtle glow effect */}
-              <div className="absolute inset-0 blur-lg opacity-30">
-                <div className="flex items-center justify-center space-x-4 text-blue-400">
-                  <div className="text-4xl md:text-5xl font-mono">{'<'}</div>
-                  <div className="w-16 h-4 bg-gradient-to-r from-blue-400 to-purple-400 rounded"></div>
-                  <div className="text-4xl md:text-5xl font-mono">{'/>'}</div>
+              {/* Outer border with white background */}
+              <div className="w-32 h-32 md:w-40 md:h-40 rounded-full p-1 bg-white">
+                <div className="w-full h-full rounded-full p-1 bg-black overflow-hidden">
+                  <img 
+                    src="/portfolio/IMG_7517.png" 
+                    alt="Zakaria Al-Alie" 
+                    className="w-full h-full rounded-full object-cover shadow-lg"
+                  />
                 </div>
               </div>
+              {/* Subtle glow effect for profile picture */}
+              <div className="absolute inset-0 rounded-full border-4 border-white opacity-20 blur-sm"></div>
             </div>
           </div>
 
@@ -36,13 +46,18 @@ const Hero: React.FC = () => {
             <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">
               Zakaria Al-Alie
             </h1>
-            <p className="text-lg md:text-xl mb-3 leading-relaxed text-gray-300">
-              Regents' & Chancellor's Scholar at UC Berkeley studying Data Science.<br />
-              Aspiring ML/AI and Software Engineer for healthcare and social impact.
+            <p className="text-lg md:text-xl mb-3 leading-relaxed text-gray-300 min-h-[3.5rem] md:min-h-[4rem]">
+              {typewriterText.split('\n').map((line, index) => (
+                <span key={index}>
+                  {line}
+                  {index < typewriterText.split('\n').length - 1 && <br />}
+                </span>
+              ))}
+              <span className="animate-pulse">|</span>
             </p>
             <div className="flex items-center justify-center space-x-2 text-base text-gray-400">
               <MapPin size={18} />
-              <span>Oakland, CA</span>
+              <span>Berkeley, CA</span>
             </div>
           </div>
 
@@ -77,6 +92,14 @@ const Hero: React.FC = () => {
               <Linkedin size={24} className="transition-transform group-hover:rotate-12" />
             </a>
             <a
+              href="https://instagram.com/510.zh"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group p-4 rounded-full transition-all duration-300 hover:scale-110 bg-gray-800/50 backdrop-blur-sm text-gray-300 hover:bg-gray-700/50 hover:text-white"
+            >
+              <Instagram size={24} className="transition-transform group-hover:rotate-12" />
+            </a>
+            <a
               href="https://leetcode.com/u/zak510/"
               target="_blank"
               rel="noopener noreferrer"
@@ -90,16 +113,16 @@ const Hero: React.FC = () => {
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4 w-full max-w-md mx-auto">
             <button
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg w-full sm:w-auto"
+              className="w-full flex items-center justify-center px-4 py-3 bg-gradient-to-r from-blue-500 to-yellow-500 rounded-lg text-sm sm:text-base font-medium hover:from-blue-600 hover:to-yellow-600 transition-all duration-300 transform hover:scale-105"
             >
-              Let's Connect
+              <span>Let's Connect!</span>
             </button>
             <a
-              href="/portfolio/Zakaria_Al-Alie_Resume_Technical.pdf"
-              download="Zakaria_Al-Alie_Resume_Technical.pdf"
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg w-full sm:w-auto text-center"
+              href="/assets/Resume Updated 07_10_2025 (1).pdf"
+              download=""
+              className="w-full flex items-center justify-center px-4 py-3 bg-gradient-to-r from-blue-500 to-yellow-500 rounded-lg text-sm sm:text-base font-medium hover:from-blue-600 hover:to-yellow-600 transition-all duration-300 transform hover:scale-105"
             >
-              Download Resume
+              <span>Download Resume</span>
             </a>
           </div>
         </div>

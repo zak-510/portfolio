@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Linkedin, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Send, Instagram } from 'lucide-react';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -46,7 +46,7 @@ const Contact: React.FC = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
-              Let's Connect
+              Let's Connect!
             </h2>
           </div>
 
@@ -96,6 +96,25 @@ const Contact: React.FC = () => {
 
                 <div className="flex items-center space-x-4">
                   <div className="p-3 rounded-full bg-gray-700">
+                    <Instagram size={20} className="text-blue-500" />
+                  </div>
+                  <div>
+                    <p className="font-medium text-white">
+                      Instagram
+                    </p>
+                    <a
+                      href="https://instagram.com/510.zh"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm hover:text-blue-500 transition-colors text-gray-300"
+                    >
+                      @510.zh
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-center space-x-4">
+                  <div className="p-3 rounded-full bg-gray-700">
                     <Phone size={20} className="text-blue-500" />
                   </div>
                   <div>
@@ -120,7 +139,7 @@ const Contact: React.FC = () => {
                       Location
                     </p>
                     <p className="text-sm text-gray-300">
-                      Oakland, CA
+                      Berkeley, CA
                     </p>
                   </div>
                 </div>
@@ -182,14 +201,14 @@ const Contact: React.FC = () => {
                     required
                     rows={5}
                     className="w-full px-4 py-3 rounded-lg border transition-colors bg-gray-700 border-gray-600 text-white placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 resize-none"
-                    placeholder="Tell me about your project, collaboration idea, or just say hello!"
+                    placeholder="Tell me anything!"
                   />
                 </div>
 
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 px-6 rounded-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 flex items-center justify-center space-x-2"
+                  className="w-full flex items-center justify-center px-4 py-3 bg-gradient-to-r from-blue-500 to-yellow-500 rounded-lg text-sm sm:text-base font-medium hover:from-blue-600 hover:to-yellow-600 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 space-x-2"
                 >
                   {isSubmitting ? (
                     <>
@@ -198,7 +217,7 @@ const Contact: React.FC = () => {
                     </>
                   ) : (
                     <>
-                      <Send size={20} />
+                      <Send className="w-5 h-5" />
                       <span>Send Message</span>
                     </>
                   )}

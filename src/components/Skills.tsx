@@ -102,9 +102,9 @@ const Skills: React.FC = () => {
           <div className="text-center mb-8">
             <button
               onClick={() => setShowSkills(!showSkills)}
-              className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold rounded-lg transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+              className="mx-auto flex items-center justify-center px-4 py-3 bg-gradient-to-r from-blue-500 to-yellow-500 rounded-lg text-sm sm:text-base font-medium hover:from-blue-600 hover:to-yellow-600 transition-all duration-300 transform hover:scale-105"
             >
-              View All Technologies
+              <span>View All Technologies</span>
             </button>
           </div>
         </div>
@@ -123,14 +123,7 @@ const Skills: React.FC = () => {
             </button>
 
             <div className="p-6">
-              <div className="text-center mb-6">
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
-                  Technical Skills & Tools
-                </h3>
-                <p className="text-gray-300">
-                  Complete overview of my technical expertise
-                </p>
-              </div>
+
 
               {/* Search Bar */}
               <div className="relative mb-6 max-w-md mx-auto">
@@ -139,7 +132,7 @@ const Skills: React.FC = () => {
                 </div>
                 <input
                   type="text"
-                  placeholder="Search skills..."
+                  placeholder="Search technologies..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   className="w-full pl-10 pr-10 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"

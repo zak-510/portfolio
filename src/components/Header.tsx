@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Linkedin, Code, Menu, X } from 'lucide-react';
+import { Github, Linkedin, Code, Menu, X, Instagram } from 'lucide-react';
 
 interface HeaderProps {
   mobileMenuOpen: boolean;
@@ -72,6 +72,14 @@ const Header: React.FC<HeaderProps> = ({ mobileMenuOpen, setMobileMenuOpen }) =>
                 <Linkedin size={20} />
               </a>
               <a
+                href="https://instagram.com/510.zh"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-full transition-all hover:scale-110 text-gray-300 hover:text-white hover:bg-gray-700"
+              >
+                <Instagram size={20} />
+              </a>
+              <a
                 href="https://leetcode.com/u/zak510/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -137,6 +145,14 @@ const Header: React.FC<HeaderProps> = ({ mobileMenuOpen, setMobileMenuOpen }) =>
                 className="p-2 rounded-full transition-all hover:scale-110 text-gray-300 hover:text-white hover:bg-gray-700"
               >
                 <Linkedin size={20} />
+              </a>
+              <a
+                href="https://instagram.com/510.zh"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-full transition-all hover:scale-110 text-gray-300 hover:text-white hover:bg-gray-700"
+              >
+                <Instagram size={20} />
               </a>
               <a
                 href="https://leetcode.com/u/zak510/"
