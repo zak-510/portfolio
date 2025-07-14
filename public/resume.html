@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zakaria Al-Alie - Resume</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #030303 0%, #080808 25%, #030303 50%, #000000 100%);
+            color: white;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .pdf-container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .header {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 1rem;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            flex-shrink: 0;
+            height: auto;
+        }
+        
+        .pdf-viewer {
+            flex: 1;
+            width: 100%;
+            border: none;
+            background: white;
+            height: calc(100vh - 120px);
+        }
+        
+        .download-btn {
+            background: linear-gradient(135deg, #3b82f6 0%, #eab308 100%);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            margin: 0 0.5rem;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        
+        .download-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+        }
+        
+        .back-btn {
+            background: linear-gradient(135deg, #3b82f6 0%, #eab308 100%);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            margin: 0 0.5rem;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        
+        .back-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+        }
+        
+                 @media (max-width: 768px) {
+             .header {
+                 padding: 0.5rem;
+             }
+             
+             .header h1 {
+                 font-size: 1.25rem;
+                 margin-bottom: 0.5rem;
+             }
+             
+             .btn-container {
+                 display: flex;
+                 flex-direction: column;
+                 gap: 0.5rem;
+                 align-items: center;
+             }
+             
+             .download-btn, .back-btn {
+                 margin: 0;
+                 width: fit-content;
+             }
+             
+             .pdf-viewer {
+                 height: calc(100vh - 140px);
+             }
+         }
+    </style>
+</head>
+<body>
+    <iframe 
+        src="/portfolio/Zakaria_Al-Alie_Resume_Technical.pdf" 
+        class="pdf-viewer"
+        title="Zakaria Al-Alie Resume"
+        style="width: 100%; height: 100vh; border: none;">
+    </iframe>
+    
+    <script>
+        // Fallback for browsers that don't support PDF viewing
+        window.addEventListener('error', function(e) {
+            if (e.target.tagName === 'IFRAME') {
+                document.querySelector('.pdf-viewer').innerHTML = 
+                    '<div style="display: flex; align-items: center; justify-content: center; height: 100%; background: #f3f4f6; color: #374151; text-align: center; padding: 2rem;">' +
+                    '<div>' +
+                    '<h2 style="color: #374151; margin-bottom: 1rem;">PDF Viewer Not Supported</h2>' +
+                    '<p style="margin-bottom: 1rem;">Your browser cannot display PDF files. Please download the resume to view it.</p>' +
+                    '<a href="/portfolio/Zakaria_Al-Alie_Resume_Technical.pdf" download style="background: #3b82f6; color: white; padding: 0.75rem 1.5rem; border-radius: 0.5rem; text-decoration: none;">Download Resume</a>' +
+                    '</div>' +
+                    '</div>';
+            }
+        });
+    </script>
+</body>
+</html> 
