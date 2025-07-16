@@ -106,9 +106,9 @@ html {
 .shooting-star {
   position: absolute;
   height: 0.25px;
-  background: linear-gradient(45deg, rgba(255, 255, 255, 0), #60a5fa, #3b82f6, rgba(255, 255, 255, 0));
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0), #eab308, #3b82f6, rgba(255, 255, 255, 0));
   border-radius: 999px;
-  filter: drop-shadow(0 0 1px #3b82f6) drop-shadow(0 0 0.5px #60a5fa);
+  filter: drop-shadow(0 0 1px #3b82f6) drop-shadow(0 0 0.5px #eab308);
   animation: shooting 3s linear infinite;
   opacity: 0;
   transform: translateX(-100px) translateY(-100px) rotate(45deg);
@@ -121,7 +121,7 @@ html {
   transform: translateY(-50%);
   width: 0.5px;
   height: 0.25px;
-  background: linear-gradient(45deg, rgba(95, 39, 205, 0), #ffffff, rgba(95, 39, 205, 0));
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0), #ffffff, rgba(255, 255, 255, 0));
   border-radius: 999px;
 }
 
@@ -132,7 +132,7 @@ html {
   transform: translateY(-50%);
   width: 1px;
   height: 0.25px;
-  background: linear-gradient(45deg, rgba(95, 39, 205, 0), #8b5cf6, rgba(95, 39, 205, 0));
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0), #eab308, rgba(255, 255, 255, 0));
   border-radius: 999px;
 }
 
@@ -159,7 +159,7 @@ html {
   left: 2%;
   animation-delay: 0s;
   animation-duration: 2s;
-  width: 2px;
+  width: 80px;
 }
 
 .shooting-star:nth-child(2) {
@@ -167,7 +167,7 @@ html {
   left: 25%;
   animation-delay: 2.5s;
   animation-duration: 1.75s;
-  width: 2.5px;
+  width: 100px;
 }
 
 .shooting-star:nth-child(3) {
@@ -175,7 +175,7 @@ html {
   left: 50%;
   animation-delay: 5s;
   animation-duration: 2.25s;
-  width: 3px;
+  width: 120px;
 }
 
 .shooting-star:nth-child(4) {
@@ -183,7 +183,7 @@ html {
   left: 75%;
   animation-delay: 7.5s;
   animation-duration: 1.9s;
-  width: 2px;
+  width: 80px;
 }
 
 .shooting-star:nth-child(5) {
@@ -191,7 +191,7 @@ html {
   left: 10%;
   animation-delay: 10s;
   animation-duration: 2.1s;
-  width: 2.5px;
+  width: 100px;
 }
 
 .shooting-star:nth-child(6) {
@@ -199,7 +199,7 @@ html {
   left: 35%;
   animation-delay: 12.5s;
   animation-duration: 1.85s;
-  width: 2.5px;
+  width: 100px;
 }
 
 .shooting-star:nth-child(7) {
@@ -207,7 +207,7 @@ html {
   left: 60%;
   animation-delay: 15s;
   animation-duration: 2.05s;
-  width: 3px;
+  width: 120px;
 }
 
 .shooting-star:nth-child(8) {
@@ -215,7 +215,7 @@ html {
   left: 85%;
   animation-delay: 17.5s;
   animation-duration: 1.95s;
-  width: 2.5px;
+  width: 100px;
 }
 
 .shooting-star:nth-child(9) {
@@ -223,7 +223,7 @@ html {
   left: 15%;
   animation-delay: 20s;
   animation-duration: 2.15s;
-  width: 2px;
+  width: 80px;
 }
 
 .shooting-star:nth-child(10) {
@@ -231,7 +231,7 @@ html {
   left: 40%;
   animation-delay: 22.5s;
   animation-duration: 1.8s;
-  width: 3px;
+  width: 120px;
 }
 
 .shooting-star:nth-child(11) {
@@ -239,7 +239,7 @@ html {
   left: 65%;
   animation-delay: 25s;
   animation-duration: 2.2s;
-  width: 2px;
+  width: 80px;
 }
 
 .shooting-star:nth-child(12) {
@@ -247,7 +247,7 @@ html {
   left: 90%;
   animation-delay: 27.5s;
   animation-duration: 2s;
-  width: 2.5px;
+  width: 100px;
 }
 
 /* Twinkling effect */
