@@ -125,12 +125,12 @@ const Skills: React.FC = () => {
             {/* Close Button */}
             <button
               onClick={() => setShowSkills(false)}
-              className="absolute top-4 right-4 z-10 p-2 bg-gray-800 hover:bg-gray-700 rounded-lg text-white transition-colors"
+              className="absolute top-4 right-4 z-20 p-2 bg-gray-800 hover:bg-gray-700 rounded-lg text-white transition-colors focus:outline-none"
             >
               <X size={24} />
             </button>
 
-            <div className="p-6">
+            <div className="p-6 pt-16 sm:pt-6">
 
 
               {/* Search Bar */}

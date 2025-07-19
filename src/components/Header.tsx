@@ -28,25 +28,25 @@ const Header: React.FC<HeaderProps> = ({ mobileMenuOpen, setMobileMenuOpen }) =>
           <nav className="hidden md:flex items-center space-x-8 absolute left-1/2 transform -translate-x-1/2">
             <button
               onClick={() => scrollToSection('education')}
-              className="hover:text-yellow-400 transition-colors font-medium text-gray-300"
+              className="hover:text-yellow-400 transition-colors font-medium text-gray-300 focus:outline-none"
             >
               Education
             </button>
             <button
               onClick={() => scrollToSection('skills')}
-              className="hover:text-yellow-400 transition-colors font-medium text-gray-300"
+              className="hover:text-yellow-400 transition-colors font-medium text-gray-300 focus:outline-none"
             >
               Skills
             </button>
             <button
               onClick={() => scrollToSection('projects')}
-              className="hover:text-yellow-400 transition-colors font-medium text-gray-300"
+              className="hover:text-yellow-400 transition-colors font-medium text-gray-300 focus:outline-none"
             >
               Projects
             </button>
             <button
               onClick={() => scrollToSection('contact')}
-              className="hover:text-yellow-400 transition-colors font-medium text-gray-300"
+              className="hover:text-yellow-400 transition-colors font-medium text-gray-300 focus:outline-none"
             >
               Contact
             </button>
@@ -92,7 +92,7 @@ const Header: React.FC<HeaderProps> = ({ mobileMenuOpen, setMobileMenuOpen }) =>
             {/* Mobile Menu Toggle */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 rounded-full transition-all text-gray-300 hover:text-white hover:bg-gray-700"
+              className="md:hidden p-3 min-w-[44px] min-h-[44px] rounded-full transition-all text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none active:bg-gray-600 touch-manipulation flex items-center justify-center"
             >
               {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
@@ -105,25 +105,25 @@ const Header: React.FC<HeaderProps> = ({ mobileMenuOpen, setMobileMenuOpen }) =>
             <nav className="flex flex-col space-y-4">
               <button
                 onClick={() => scrollToSection('education')}
-                className="text-left hover:text-yellow-400 transition-colors text-gray-300"
+                className="text-left hover:text-yellow-400 transition-colors text-gray-300 focus:outline-none"
               >
                 Education
               </button>
               <button
                 onClick={() => scrollToSection('skills')}
-                className="text-left hover:text-yellow-400 transition-colors text-gray-300"
+                className="text-left hover:text-yellow-400 transition-colors text-gray-300 focus:outline-none"
               >
                 Skills
               </button>
               <button
                 onClick={() => scrollToSection('projects')}
-                className="text-left hover:text-yellow-400 transition-colors text-gray-300"
+                className="text-left hover:text-yellow-400 transition-colors text-gray-300 focus:outline-none"
               >
                 Projects
               </button>
               <button
                 onClick={() => scrollToSection('contact')}
-                className="text-left hover:text-yellow-400 transition-colors text-gray-300"
+                className="text-left hover:text-yellow-400 transition-colors text-gray-300 focus:outline-none"
               >
                 Contact
               </button>
