@@ -91,7 +91,14 @@ const Header: React.FC<HeaderProps> = ({ mobileMenuOpen, setMobileMenuOpen }) =>
 
             {/* Mobile Menu Toggle */}
             <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                // Use requestAnimationFrame to ensure the state update happens
+                requestAnimationFrame(() => {
+                  setMobileMenuOpen(!mobileMenuOpen);
+                });
+              }}
               className="md:hidden p-3 min-w-[44px] min-h-[44px] rounded-full transition-all text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none active:bg-gray-600 touch-manipulation flex items-center justify-center"
             >
               {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
