@@ -1,7 +1,10 @@
 import React from 'react';
 import { Github, Calendar, TrendingUp } from 'lucide-react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const Projects: React.FC = () => {
+  const { elementRef, isVisible } = useScrollAnimation({ threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  
   const projects = [
     {
       title: "xView2 Building Damage Assessment",
@@ -32,7 +35,13 @@ const Projects: React.FC = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-transparent">
+    <section 
+      id="projects" 
+      ref={elementRef}
+      className={`py-20 bg-transparent smooth-scroll-animate ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+      }`}
+    >
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
@@ -45,7 +54,7 @@ const Projects: React.FC = () => {
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="group overflow-hidden rounded-xl transition-all duration-300 hover:scale-[1.02] bg-gray-800 hover:bg-gray-700"
+                className="group overflow-hidden rounded-xl transition-all duration-300 hover:scale-[1.02] glass"
               >
                 <div className="lg:flex">
                   

@@ -1,7 +1,10 @@
 import React from 'react';
 import { GraduationCap, Award, BookOpen, Calendar } from 'lucide-react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const Education: React.FC = () => {
+  const { elementRef, isVisible } = useScrollAnimation({ threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  
   const education = [
     {
       school: "University of California, Berkeley",
@@ -34,7 +37,13 @@ const Education: React.FC = () => {
   ];
 
   return (
-    <section id="education" className="py-20 bg-transparent">
+    <section 
+      id="education" 
+      ref={elementRef}
+      className={`py-20 bg-transparent smooth-scroll-animate ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+      }`}
+    >
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">

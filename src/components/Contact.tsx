@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Linkedin, Send, Instagram } from 'lucide-react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -9,6 +10,7 @@ const Contact: React.FC = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const { elementRef, isVisible } = useScrollAnimation({ threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -41,7 +43,13 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-transparent">
+    <section 
+      id="contact" 
+      ref={elementRef}
+      className={`py-20 bg-transparent smooth-scroll-animate ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+      }`}
+    >
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
@@ -52,7 +60,7 @@ const Contact: React.FC = () => {
 
           <div className="grid md:grid-cols-2 gap-8">
             {/* Contact Information */}
-            <div className="p-8 rounded-xl bg-gray-800 shadow-lg">
+            <div className="p-8 rounded-xl glass shadow-lg">
               <h3 className="text-2xl font-semibold mb-6 text-white">
                 Get in Touch
               </h3>
@@ -147,7 +155,7 @@ const Contact: React.FC = () => {
             </div>
 
             {/* Contact Form */}
-            <div className="p-8 rounded-xl bg-gray-800 shadow-lg">
+            <div className="p-8 rounded-xl glass shadow-lg">
               <h3 className="text-2xl font-semibold mb-6 text-white">
                 Send a Message
               </h3>
