@@ -3,7 +3,7 @@ import { Github, Linkedin, Code, MapPin, Mail, Phone, Instagram } from 'lucide-r
 
 const Hero: React.FC = () => {
   const [typewriterText, setTypewriterText] = useState('');
-  const fullText = "Regents' & Chancellor's Scholar at UC Berkeley studying Data Science.\nAspiring AI/ML and Software Engineer for healthcare, environment sustainability, and social impact.";
+  const fullText = "Regents' & Chancellor's Scholar at UC Berkeley studying Data Science.\nAspiring AI/ML and Software Engineer for social impact, equitable resource access, and healthcare.";
   
   useEffect(() => {
     let index = 0;
