@@ -30,7 +30,7 @@ const Hero: React.FC = () => {
               <div className="w-32 h-32 md:w-40 md:h-40 rounded-full p-1 gradient-border-blue-gold">
                 <div className="w-full h-full rounded-full p-1 bg-black overflow-hidden">
                   <img 
-                    src="/portfolio/IMG_7517.png" 
+                    src="/IMG_7517.png" 
                     alt="Zakaria Al-Alie" 
                     className="w-full h-full rounded-full object-cover shadow-lg"
                   />
@@ -118,7 +118,7 @@ const Hero: React.FC = () => {
               <span>Let's Connect!</span>
             </button>
             <a
-              href="/portfolio/resume.html"
+              href="/resume.html"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full flex items-center justify-center px-4 py-3 bg-gradient-to-r from-blue-500 to-yellow-500 rounded-lg text-sm sm:text-base font-medium hover:from-blue-600 hover:to-yellow-600 transition-all duration-300 transform hover:scale-105"
