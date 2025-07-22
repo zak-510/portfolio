@@ -31,7 +31,9 @@ const Contact: React.FC = () => {
         `${formData.message}\n\n- ${formData.name}`
       );
       const mailtoLink = `mailto:zakaria.al-alie@berkeley.edu?subject=${subject}&body=${body}`;
-      window.open(mailtoLink, '_blank');
+      
+      // Use location.href instead of window.open for better mobile compatibility
+      window.location.href = mailtoLink;
       
       setFormData({ name: '', email: '', message: '' });
       setSubmitStatus('success');
