@@ -24,17 +24,33 @@ const Contact: React.FC = () => {
     setIsSubmitting(true);
     setSubmitStatus('idle');
 
+    // Fallback to mailto if Formspree fails
+    const fallbackToEmail = () => {
+      const subject = encodeURIComponent(`Portfolio Contact from ${formData.name}`);
+      const body = encodeURIComponent(
+        `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+      );
+      const mailtoLink = `mailto:zakaria.al-alie@berkeley.edu?subject=${subject}&body=${body}`;
+      window.open(mailtoLink, '_blank');
+      
+      setFormData({ name: '', email: '', message: '' });
+      setSubmitStatus('success');
+      setTimeout(() => setSubmitStatus('idle'), 5000);
+    };
+
     try {
+      // Try Formspree first
+      const form = new FormData();
+      form.append('name', formData.name);
+      form.append('email', formData.email);
+      form.append('message', formData.message);
+
       const response = await fetch('https://formspree.io/f/xanwqwaj', {
         method: 'POST',
+        body: form,
         headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          message: formData.message,
-        }),
+          'Accept': 'application/json'
+        }
       });
 
       if (response.ok) {
@@ -45,13 +61,13 @@ const Contact: React.FC = () => {
         // Reset success message after 5 seconds
         setTimeout(() => setSubmitStatus('idle'), 5000);
       } else {
-        setSubmitStatus('error');
-        setTimeout(() => setSubmitStatus('idle'), 5000);
+        // If Formspree fails, fall back to mailto
+        fallbackToEmail();
       }
     } catch (error) {
-      console.error('Form submission error:', error);
-      setSubmitStatus('error');
-      setTimeout(() => setSubmitStatus('idle'), 5000);
+      console.error('Form submission error, falling back to email:', error);
+      // If fetch fails, fall back to mailto
+      fallbackToEmail();
     } finally {
       setIsSubmitting(false);
     }
@@ -250,7 +266,7 @@ const Contact: React.FC = () => {
                 {submitStatus === 'success' && (
                   <div className="text-center p-4 bg-green-500/20 border border-green-500/30 rounded-lg">
                     <p className="text-green-400 font-medium">
-                      ✓ Message sent successfully! I'll get back to you soon at zakaria.al-alie@berkeley.edu.
+                      ✓ Email client opened! If it didn't open automatically, please email me directly at zakaria.al-alie@berkeley.edu.
                     </p>
                   </div>
                 )}
