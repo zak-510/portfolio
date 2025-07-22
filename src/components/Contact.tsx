@@ -26,9 +26,9 @@ const Contact: React.FC = () => {
 
     // Fallback to mailto if Formspree fails
     const fallbackToEmail = () => {
-      const subject = encodeURIComponent(`Portfolio Contact from ${formData.name}`);
+      const subject = encodeURIComponent(`Hi Zakaria`);
       const body = encodeURIComponent(
-        `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+        `${formData.message}\n\n- ${formData.name}`
       );
       const mailtoLink = `mailto:zakaria.al-alie@berkeley.edu?subject=${subject}&body=${body}`;
       window.open(mailtoLink, '_blank');
