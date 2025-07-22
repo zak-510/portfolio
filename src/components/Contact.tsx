@@ -24,19 +24,34 @@ const Contact: React.FC = () => {
     setIsSubmitting(true);
     setSubmitStatus('idle');
 
-    // Simulate form submission with a delay
     try {
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
-      // Reset form
-      setFormData({ name: '', email: '', message: '' });
-      setSubmitStatus('success');
-      
-      // Reset success message after 3 seconds
-      setTimeout(() => setSubmitStatus('idle'), 3000);
+      const response = await fetch('https://formspree.io/f/xanwqwaj', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        }),
+      });
+
+      if (response.ok) {
+        // Reset form on success
+        setFormData({ name: '', email: '', message: '' });
+        setSubmitStatus('success');
+        
+        // Reset success message after 5 seconds
+        setTimeout(() => setSubmitStatus('idle'), 5000);
+      } else {
+        setSubmitStatus('error');
+        setTimeout(() => setSubmitStatus('idle'), 5000);
+      }
     } catch (error) {
+      console.error('Form submission error:', error);
       setSubmitStatus('error');
-      setTimeout(() => setSubmitStatus('idle'), 3000);
+      setTimeout(() => setSubmitStatus('idle'), 5000);
     } finally {
       setIsSubmitting(false);
     }
@@ -235,7 +250,7 @@ const Contact: React.FC = () => {
                 {submitStatus === 'success' && (
                   <div className="text-center p-4 bg-green-500/20 border border-green-500/30 rounded-lg">
                     <p className="text-green-400 font-medium">
-                      ✓ Message sent successfully! I'll get back to you soon.
+                      ✓ Message sent successfully! I'll get back to you soon at zakaria.al-alie@berkeley.edu.
                     </p>
                   </div>
                 )}
@@ -243,7 +258,7 @@ const Contact: React.FC = () => {
                 {submitStatus === 'error' && (
                   <div className="text-center p-4 bg-red-500/20 border border-red-500/30 rounded-lg">
                     <p className="text-red-400 font-medium">
-                      ✗ Failed to send message. Please try again or contact me directly.
+                      ✗ Failed to send message. Please try again or email me directly at zakaria.al-alie@berkeley.edu.
                     </p>
                   </div>
                 )}
