@@ -79,10 +79,12 @@ const Education: React.FC = () => {
                         <Calendar size={16} />
                         <span>{edu.period}</span>
                       </div>
-                      <div className="flex items-center space-x-2 text-gray-400">
-                        <Award size={16} />
-                        <span>{edu.gpa}</span>
-                      </div>
+                      {edu.gpa && (
+                        <div className="flex items-center space-x-2 text-gray-400">
+                          <Award size={16} />
+                          <span>{edu.gpa}</span>
+                        </div>
+                      )}
                     </div>
 
                     <div>
