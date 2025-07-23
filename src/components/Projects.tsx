@@ -8,7 +8,7 @@ const Projects: React.FC = () => {
   const projects = [
     {
       title: "xView2 Building Damage Assessment",
-      period: "Apr. 2025 - Present",
+      period: "Apr. 2025 - June 2025",
       description: "Automated building damage assessment from Maxar satellite imagery using PyTorch, processing 850K+ buildings across 15 countries and 6 disaster types. Created a two-stage deep learning architecture achieving 94.4% weighted F1 with strong performance on critical categories.",
       highlights: [
         "U-Net building localization and CNN damage classifier",
@@ -21,15 +21,15 @@ const Projects: React.FC = () => {
     },
     {
       title: "BerkeleyBets",
-      period: "June 2025",
-      description: "Full-stack web application using React, Express.js, and Firebase for sports performance prediction and analytics across NBA, NFL, and MLB. Developed REST API backend integrated with scikit-learn ML models trained on multi-season player statistics.",
+      period: "CalHacks Hackathon, June 2025",
+      description: "Full-stack sports analytics platform serving 150+ athletes across NBA, NFL, and MLB. Built with React (8 components, 4 pages) and Express.js REST API, processing extensive player data with advanced machine learning models.",
       highlights: [
-        "Real-time player lookup with fuzzy search capabilities",
-        "Dynamic routing with React Router",
-        "Predictive analytics dashboard with performance tracking",
-        "Multi-sport analytics across NBA, NFL, and MLB"
+        "Processed 15,000+ samples from 1,419 player-seasons (2023–2024) using position-specific Random Forest models",
+        "Implemented temporal validation techniques to prevent overfitting in predictive models",
+        "Real-time player lookup system with fuzzy search capabilities (Fuse.js) and dynamic routing",
+        "Predictive analytics dashboard featuring live simulation betting and performance tracking"
       ],
-      techStack: ["React", "Express.js", "Firebase", "scikit-learn", "Fuse.js", "React Router", "Node.js"],
+      techStack: ["React", "Express.js", "Firebase", "scikit-learn", "Fuse.js", "React Router", "Random Forest"],
       github: "https://github.com/zak-510/BerkeleyBets"
     }
   ];

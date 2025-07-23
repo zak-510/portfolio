@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Education from './components/Education';
+import Awards from './components/Awards';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Contact from './components/Contact';
@@ -52,6 +53,7 @@ function App() {
       <main className="pt-16 relative z-10">
         <Hero />
         <Education />
+        <Awards />
         <Skills />
         <Projects />
         <Contact />

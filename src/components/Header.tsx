@@ -33,6 +33,12 @@ const Header: React.FC<HeaderProps> = ({ mobileMenuOpen, setMobileMenuOpen }) =>
               Education
             </button>
             <button
+              onClick={() => scrollToSection('awards')}
+              className="hover:text-yellow-400 transition-colors font-medium text-gray-300 focus:outline-none"
+            >
+              Awards
+            </button>
+            <button
               onClick={() => scrollToSection('skills')}
               className="hover:text-yellow-400 transition-colors font-medium text-gray-300 focus:outline-none"
             >
@@ -115,6 +121,12 @@ const Header: React.FC<HeaderProps> = ({ mobileMenuOpen, setMobileMenuOpen }) =>
                 className="text-left hover:text-yellow-400 transition-colors text-gray-300 focus:outline-none"
               >
                 Education
+              </button>
+              <button
+                onClick={() => scrollToSection('awards')}
+                className="text-left hover:text-yellow-400 transition-colors text-gray-300 focus:outline-none"
+              >
+                Awards
               </button>
               <button
                 onClick={() => scrollToSection('skills')}
