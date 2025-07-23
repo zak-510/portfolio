@@ -10,7 +10,7 @@ const Education: React.FC = () => {
       school: "University of California, Berkeley",
       degree: "Bachelor of Arts in Data Science",
       period: "May 2029",
-      gpa: "Regents' and Chancellor's Scholarship Recipient",
+      gpa: "",
       courses: [
         "Foundations of Data Science",
         "Program Structures",
@@ -24,7 +24,7 @@ const Education: React.FC = () => {
       school: "Merritt College, Oakland",
       degree: "Dual Enrollment",
       period: "Dec. 2024",
-      gpa: "GPA: 3.86/4.0",
+      gpa: "",
       courses: [
         "Applications in Info Security",
         "Secure Coding in JAVA and .NET",
