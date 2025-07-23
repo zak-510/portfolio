@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Github, Linkedin, Code, MapPin, Mail, Phone, Instagram } from 'lucide-react';
+import { Github, Linkedin, MapPin, Mail, Phone, Instagram } from 'lucide-react';
 
 const Hero: React.FC = () => {
   const [typewriterText, setTypewriterText] = useState('');
