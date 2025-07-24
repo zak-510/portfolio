@@ -128,7 +128,7 @@ const Contact: React.FC = () => {
                       href="https://www.linkedin.com/in/zakaria-al-alie-82a43b354/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm hover:text-blue-500 transition-colors text-gray-300 focus:outline-none"
+                      className="text-sm hover:text-blue-500 transition-colors text-gray-300"
                     >
                       Zakaria Al-Alie
                     </a>
@@ -147,7 +147,7 @@ const Contact: React.FC = () => {
                       href="https://instagram.com/510.zh"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm hover:text-blue-500 transition-colors text-gray-300 focus:outline-none"
+                      className="text-sm hover:text-blue-500 transition-colors text-gray-300"
                     >
                       @510.zh
                     </a>
