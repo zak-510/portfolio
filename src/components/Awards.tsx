@@ -7,15 +7,15 @@ const Awards = () => {
 
   const awards = [
     {
-      title: "Regents' and Chancellor's Scholarship",
+      title: "Regents' and Chancellor's Scholarship, UC Berkeley",
       date: "2025 - 2029",
       description: "The Regents' and Chancellor's Scholarship is the most prestigious scholarship offered by UC Berkeley to the top 1-2% entering undergraduate students.",
       link: "https://financialaid.berkeley.edu/types-of-aid-at-berkeley/scholarships/regents-and-chancellors-scholarship/"
     },
     {
-      title: "Leaders for Tomorrow Scholarship",
+      title: "Leaders for Tomorrow Scholar, Annexstad Family Foundation",
       date: "2025 - 2029",
-      description: "This 4-year national scholarship, awarded by the Annexstad Family Foundation in partnership with UC Berkeley, recognizes students who have demonstrated perseverance in the face of adversity and strong leadership potential. I am honored to be selected as one of only 110 scholars nationwide across a network of 75+ partner universities.",
+      description: "Selected as one of 110 scholars nationwide across 75+ partner universities. This national scholarship, awarded in partnership with UC Berkeley, recognizes students who have demonstrated perseverance in the face of adversity and exceptional leadership potential.",
       link: "https://annexstadfamilyfoundation.org/pages/scholarship-programs-leaders-for-tomorrow#:~:text=Since%202012%2C%20the%20Leaders%20for,leadership%20potential%20across%20the%20nation."
     }
   ];
