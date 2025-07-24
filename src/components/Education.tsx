@@ -9,7 +9,7 @@ const Education: React.FC = () => {
     {
       school: "University of California, Berkeley",
       degree: "Bachelor of Arts in Data Science",
-      period: "May 2029",
+      period: "Aug. 2025 - May 2029",
       gpa: "",
       courses: [
         "Foundations of Data Science",
@@ -23,7 +23,7 @@ const Education: React.FC = () => {
     {
       school: "Merritt College, Oakland",
       degree: "Dual Enrollment",
-      period: "Dec. 2024",
+      period: "Jan. 2024 - Jan. 2025",
       gpa: "",
       courses: [
         "Applications in Info Security",
