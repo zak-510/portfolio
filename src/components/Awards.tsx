@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar, ExternalLink } from 'lucide-react';
+import { Calendar, ExternalLink, Award } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const Awards = () => {
@@ -7,15 +7,15 @@ const Awards = () => {
 
   const awards = [
     {
-      title: "Regents' and Chancellor's Scholarship, UC Berkeley",
+      title: "Regents' and Chancellor's Scholarship",
       date: "Aug. 2025 - May 2029",
       description: "The Regents' and Chancellor's Scholarship is the most prestigious scholarship offered by UC Berkeley to the top 1-2% entering undergraduate students for their creativity, leadership, service, and a strong commitment to excellence.",
       link: "https://financialaid.berkeley.edu/types-of-aid-at-berkeley/scholarships/regents-and-chancellors-scholarship/"
     },
     {
-      title: "Leaders for Tomorrow Scholar, Annexstad Family Foundation",
+      title: "Leaders for Tomorrow Scholarship",
       date: "Aug. 2025 - May 2029",
-      description: "Selected as one of 110 scholars nationwide across 75+ partner universities. This national scholarship, awarded in partnership with UC Berkeley, recognizes students who have demonstrated perseverance in the face of adversity and exceptional leadership potential.",
+      description: "Selected as one of 110 scholars nationwide across 75+ partner universities. This national scholarship, awarded by the Annexstad Family Foundation in partnership with UC Berkeley, recognizes students who have demonstrated perseverance in the face of adversity and exceptional leadership potential.",
       link: "https://annexstadfamilyfoundation.org/pages/scholarship-programs-leaders-for-tomorrow#:~:text=Since%202012%2C%20the%20Leaders%20for,leadership%20potential%20across%20the%20nation."
     }
   ];
@@ -43,9 +43,14 @@ const Awards = () => {
                 className="group p-8 rounded-xl glass hover:scale-[1.02] transition-all duration-300"
               >
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-2xl font-bold text-white">
-                    {award.title}
-                  </h3>
+                  <div className="flex items-center">
+                    <div className="p-3 rounded-full mr-4 bg-blue-500/20">
+                      <Award size={24} className="text-blue-400" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-white">
+                      {award.title}
+                    </h3>
+                  </div>
                   <a
                     href={award.link}
                     target="_blank"
