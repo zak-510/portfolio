@@ -9,10 +9,10 @@ const Projects: React.FC = () => {
     {
       title: "xView2 Building Damage Assessment",
       period: "Apr. 2025 - June 2025",
-      description: "Automated building damage assessment from Maxar satellite imagery using PyTorch, processing 850K+ buildings across 15 countries and 6 disaster types. Created a two-stage deep learning architecture achieving 94.4% weighted F1 with strong performance on critical categories.",
+      description: "Automated building damage assessment from Maxar satellite imagery using PyTorch, processing 850K+ buildings across 15 countries and 6 disaster types. Created a two-stage deep learning architecture achieving 84.4% weighted F1 with strong performance on critical categories.",
       highlights: [
         "U-Net building localization and CNN damage classifier",
-        "94.4% weighted F1 score (92% F1 undamaged, 72% F1 destroyed)",
+        "84.4% weighted F1 score (92% F1 undamaged, 72% F1 destroyed)",
         "CUDA-supported inference with evaluation metrics",
         "Disaster visualizations for humanitarian response"
       ],
