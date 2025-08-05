@@ -38,19 +38,19 @@ const Projects: React.FC = () => {
     <section 
       id="projects" 
       ref={elementRef}
-      className={`py-20 bg-transparent smooth-scroll-animate ${
+      className={`py-12 sm:py-16 lg:py-20 bg-transparent smooth-scroll-animate ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
       }`}
     >
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-white">
               Featured Projects
             </h2>
           </div>
 
-          <div className="grid lg:grid-cols-1 gap-8">
+          <div className="grid lg:grid-cols-1 gap-6 sm:gap-8">
             {projects.map((project, index) => (
               <div
                 key={index}
@@ -58,12 +58,12 @@ const Projects: React.FC = () => {
               >
                 <div className="lg:flex">
                   
-                  <div className="w-full p-8">
-                    <div className="flex items-center justify-between mb-4">
-                      <h3 className="text-2xl font-bold text-white">
+                  <div className="w-full p-4 sm:p-6 lg:p-8">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 gap-3 sm:gap-0">
+                      <h3 className="text-xl sm:text-2xl font-bold text-white">
                         {project.title}
                       </h3>
-                      <div className="flex space-x-3">
+                      <div className="flex space-x-3 self-start sm:self-auto">
                         <a
                           href={project.github}
                           target="_blank"
@@ -80,29 +80,29 @@ const Projects: React.FC = () => {
                       <span>{project.period}</span>
                     </div>
 
-                    <p className="text-gray-300 mb-6 leading-relaxed">
+                    <p className="text-gray-300 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
                       {project.description}
                     </p>
 
-                    <div className="mb-6">
-                      <h4 className="text-lg font-semibold text-white mb-3">Key Highlights</h4>
-                      <ul className="space-y-2">
+                    <div className="mb-4 sm:mb-6">
+                      <h4 className="text-base sm:text-lg font-semibold text-white mb-3">Key Highlights</h4>
+                      <ul className="space-y-2 sm:space-y-3">
                         {project.highlights.map((highlight, highlightIndex) => (
-                          <li key={highlightIndex} className="text-gray-300 flex items-start">
-                            <TrendingUp size={16} className="text-blue-400 mr-3 mt-1 flex-shrink-0" />
-                            {highlight}
+                          <li key={highlightIndex} className="text-gray-300 flex items-start text-sm sm:text-base">
+                            <TrendingUp size={14} className="text-blue-400 mr-2 sm:mr-3 mt-1 flex-shrink-0 sm:w-4 sm:h-4" />
+                            <span className="leading-relaxed">{highlight}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
 
                     <div>
-                      <h4 className="text-lg font-semibold text-white mb-3">Tech Stack</h4>
-                      <div className="flex flex-wrap gap-2">
+                      <h4 className="text-base sm:text-lg font-semibold text-white mb-3">Tech Stack</h4>
+                      <div className="flex flex-wrap gap-1.5 sm:gap-2">
                         {project.techStack.map((tech, techIndex) => (
                           <span
                             key={techIndex}
-                            className="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm font-medium hover:bg-gray-600 transition-colors"
+                            className="px-2 sm:px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-xs sm:text-sm font-medium hover:bg-gray-600 transition-colors"
                           >
                             {tech}
                           </span>
