@@ -46,7 +46,7 @@ const Hero: React.FC = () => {
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 text-white break-words" style={{opacity: 1, transform: 'none'}}>
               Zakaria Al-Alie
             </h1>
-            <p className="text-lg md:text-xl mb-3 leading-relaxed text-gray-300 min-h-[3.5rem] md:min-h-[4rem]">
+            <p className="text-lg md:text-xl mb-3 leading-relaxed text-gray-300 min-h-[5rem] sm:min-h-[4.5rem] md:min-h-[5rem]">
               {typewriterText.split('\n').map((line, index) => (
                 <span key={index}>
                   {line}
