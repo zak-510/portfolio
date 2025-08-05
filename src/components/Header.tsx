@@ -25,7 +25,7 @@ const Header: React.FC<HeaderProps> = ({ mobileMenuOpen, setMobileMenuOpen }) =>
           </div>
 
           {/* Center - Desktop Navigation (Absolutely positioned for perfect centering) */}
-          <nav className="hidden md:flex items-center space-x-8 absolute left-1/2 transform -translate-x-1/2">
+          <nav className="hidden lg:flex items-center space-x-8 absolute left-1/2 transform -translate-x-1/2">
             <button
               onClick={() => scrollToSection('education')}
               className="hover:text-yellow-400 transition-colors font-medium text-gray-300 focus:outline-none"
@@ -59,8 +59,8 @@ const Header: React.FC<HeaderProps> = ({ mobileMenuOpen, setMobileMenuOpen }) =>
           </nav>
 
           {/* Right side - Social Links */}
-          <div className="flex items-center space-x-2 sm:space-x-4 flex-1 md:flex-none justify-end">
-            <div className="hidden sm:flex items-center space-x-2 md:space-x-3">
+          <div className="flex items-center space-x-2 sm:space-x-4 flex-1 lg:flex-none justify-end">
+            <div className="hidden lg:flex items-center space-x-2 md:space-x-3">
               <a
                 href="https://github.com/zak-510"
                 target="_blank"
@@ -107,7 +107,7 @@ const Header: React.FC<HeaderProps> = ({ mobileMenuOpen, setMobileMenuOpen }) =>
                   setMobileMenuOpen(!mobileMenuOpen);
                 });
               }}
-              className="md:hidden p-2 sm:p-3 min-w-[40px] min-h-[40px] sm:min-w-[44px] sm:min-h-[44px] rounded-full transition-all text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none active:bg-gray-600 touch-manipulation flex items-center justify-center"
+              className="lg:hidden p-2 sm:p-3 min-w-[40px] min-h-[40px] sm:min-w-[44px] sm:min-h-[44px] rounded-full transition-all text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none active:bg-gray-600 touch-manipulation flex items-center justify-center"
             >
               {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
@@ -116,7 +116,7 @@ const Header: React.FC<HeaderProps> = ({ mobileMenuOpen, setMobileMenuOpen }) =>
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden mt-4 py-4 border-t border-gray-700 transition-all duration-300">
+          <div className="lg:hidden mt-4 py-4 border-t border-gray-700 transition-all duration-300">
             <nav className="flex flex-col space-y-4">
               <button
                 onClick={() => scrollToSection('education')}
