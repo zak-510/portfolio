@@ -120,7 +120,7 @@ const Hero: React.FC = () => {
               <span>Let's Connect!</span>
             </button>
             <a
-              href="/resume.html"
+              href="/Zakaria_Al-Alie_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full flex items-center justify-center px-4 py-3 bg-gradient-to-r from-blue-500 to-yellow-500 rounded-lg text-sm sm:text-base font-medium hover:from-blue-600 hover:to-yellow-600 transition-all duration-300 transform hover:scale-105"
