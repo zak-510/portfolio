@@ -46,7 +46,7 @@ const Hero: React.FC = () => {
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 text-white break-words" style={{opacity: 1, transform: 'none'}}>
               Zakaria Al-Alie
             </h1>
-            <p className="text-lg md:text-xl mb-3 leading-relaxed text-gray-300 min-h-[5rem] sm:min-h-[4.5rem] md:min-h-[5rem]">
+            <p className="text-lg md:text-xl mb-3 leading-relaxed text-gray-300 min-h-[3.5rem] md:min-h-[4rem]">
               {typewriterText.split('\n').map((line, index) => (
                 <span key={index}>
                   {line}
@@ -120,7 +120,7 @@ const Hero: React.FC = () => {
               <span>Let's Connect!</span>
             </button>
             <a
-              href="/Zakaria_Al-Alie_Resume.pdf"
+              href="/resume.html"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full flex items-center justify-center px-4 py-3 bg-gradient-to-r from-blue-500 to-yellow-500 rounded-lg text-sm sm:text-base font-medium hover:from-blue-600 hover:to-yellow-600 transition-all duration-300 transform hover:scale-105"

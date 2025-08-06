@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Calendar, TrendingUp } from 'lucide-react';
+import { Github, Calendar, TrendingUp, ExternalLink } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const Projects: React.FC = () => {
@@ -20,8 +20,8 @@ const Projects: React.FC = () => {
       github: "https://github.com/zak-510/disaster-classifier"
     },
     {
-      title: "BerkeleyBets",
-      period: "CalHacks Hackathon, June 2025",
+      title: "BerkeleyBets, CalHacks Hackathon",
+      period: "June 2025",
       description: "Full-stack sports analytics platform serving 150+ athletes across NBA, NFL, and MLB. Built with React (8 components, 4 pages) and Express.js REST API, processing extensive player data with advanced machine learning models.",
       highlights: [
         "Processed 15,000+ samples from 1,419 player-seasons (2023–2024) using position-specific Random Forest models",
@@ -31,6 +31,20 @@ const Projects: React.FC = () => {
       ],
       techStack: ["React", "Express.js", "Firebase", "scikit-learn", "Fuse.js", "React Router", "Random Forest"],
       github: "https://github.com/zak-510/BerkeleyBets"
+    },
+    {
+      title: "Candidate Recommendation Engine",
+      period: "Aug. 2025",
+      description: "Built an AI-powered resume screening tool that ranks candidates based on semantic similarity to job descriptions using NLP and sentence embeddings. Developed an interactive Streamlit web app that supports batch resume uploads, real-time candidate scoring, and AI-generated summaries.",
+      highlights: [
+        "Integrated cosine similarity and transformer-based models (MiniLM, Mistral 24B via Hugging Face) to go beyond keyword matching and deliver context-aware rankings",
+        "Enabled efficient hiring workflows by automating initial resume screening and surfacing top candidates with clear match insights",
+        "Interactive Streamlit web app with batch resume uploads and real-time candidate scoring",
+        "AI-generated summaries for comprehensive candidate evaluation"
+      ],
+      techStack: ["Python", "Streamlit", "Sentence Transformers", "scikit-learn", "PyMuPDF", "OpenRouter API", "Mistral AI"],
+      github: "https://github.com/zak-510/Candidate-Recommendation-Engine",
+      demo: "https://candidate-rec.streamlit.app/"
     }
   ];
 
@@ -38,19 +52,19 @@ const Projects: React.FC = () => {
     <section 
       id="projects" 
       ref={elementRef}
-      className={`py-12 sm:py-16 lg:py-20 bg-transparent smooth-scroll-animate ${
+      className={`py-20 bg-transparent smooth-scroll-animate ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
       }`}
     >
-      <div className="container mx-auto px-4 sm:px-6">
+      <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-8 sm:mb-12">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-white">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
               Featured Projects
             </h2>
           </div>
 
-          <div className="grid lg:grid-cols-1 gap-6 sm:gap-8">
+          <div className="grid lg:grid-cols-1 gap-8">
             {projects.map((project, index) => (
               <div
                 key={index}
@@ -58,12 +72,23 @@ const Projects: React.FC = () => {
               >
                 <div className="lg:flex">
                   
-                  <div className="w-full p-4 sm:p-6 lg:p-8">
-                    <div className="flex items-start justify-between mb-4 gap-3">
-                      <h3 className="text-xl sm:text-2xl font-bold text-white flex-1">
+                  <div className="w-full p-8">
+                    <div className="flex items-center justify-between mb-4">
+                      <h3 className="text-2xl font-bold text-white">
                         {project.title}
                       </h3>
-                      <div className="flex space-x-3 flex-shrink-0">
+                      <div className="flex space-x-3">
+                        {project.demo && (
+                          <a
+                            href={project.demo}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="px-3 py-2 rounded-full transition-all hover:scale-110 text-gray-300 hover:text-white hover:bg-gray-600 flex items-center space-x-1"
+                          >
+                            <ExternalLink size={16} />
+                            <span className="text-sm font-medium">Demo</span>
+                          </a>
+                        )}
                         <a
                           href={project.github}
                           target="_blank"
@@ -80,29 +105,29 @@ const Projects: React.FC = () => {
                       <span>{project.period}</span>
                     </div>
 
-                    <p className="text-gray-300 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
+                    <p className="text-gray-300 mb-6 leading-relaxed">
                       {project.description}
                     </p>
 
-                    <div className="mb-4 sm:mb-6">
-                      <h4 className="text-base sm:text-lg font-semibold text-white mb-3">Key Highlights</h4>
-                      <ul className="space-y-2 sm:space-y-3">
+                    <div className="mb-6">
+                      <h4 className="text-lg font-semibold text-white mb-3">Key Highlights</h4>
+                      <ul className="space-y-2">
                         {project.highlights.map((highlight, highlightIndex) => (
-                          <li key={highlightIndex} className="text-gray-300 flex items-start text-sm sm:text-base">
-                            <TrendingUp size={14} className="text-blue-400 mr-2 sm:mr-3 mt-1 flex-shrink-0 sm:w-4 sm:h-4" />
-                            <span className="leading-relaxed">{highlight}</span>
+                          <li key={highlightIndex} className="text-gray-300 flex items-start">
+                            <TrendingUp size={16} className="text-blue-400 mr-3 mt-1 flex-shrink-0" />
+                            {highlight}
                           </li>
                         ))}
                       </ul>
                     </div>
 
                     <div>
-                      <h4 className="text-base sm:text-lg font-semibold text-white mb-3">Tech Stack</h4>
-                      <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                      <h4 className="text-lg font-semibold text-white mb-3">Tech Stack</h4>
+                      <div className="flex flex-wrap gap-2">
                         {project.techStack.map((tech, techIndex) => (
                           <span
                             key={techIndex}
-                            className="px-2 sm:px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-xs sm:text-sm font-medium hover:bg-gray-600 transition-colors"
+                            className="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm font-medium hover:bg-gray-600 transition-colors"
                           >
                             {tech}
                           </span>
