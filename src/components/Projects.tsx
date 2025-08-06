@@ -38,9 +38,7 @@ const Projects: React.FC = () => {
       description: "Built an AI-powered resume screening tool that ranks candidates based on semantic similarity to job descriptions using NLP and sentence embeddings. Developed an interactive Streamlit web app that supports batch resume uploads, real-time candidate scoring, and AI-generated summaries.",
       highlights: [
         "Integrated cosine similarity and transformer-based models (MiniLM, Mistral 24B via Hugging Face) to go beyond keyword matching and deliver context-aware rankings",
-        "Enabled efficient hiring workflows by automating initial resume screening and surfacing top candidates with clear match insights",
-        "Interactive Streamlit web app with batch resume uploads and real-time candidate scoring",
-        "AI-generated summaries for comprehensive candidate evaluation"
+        "Enabled efficient hiring workflows by automating initial resume screening and surfacing top candidates with clear match insights"
       ],
       techStack: ["Python", "Streamlit", "Sentence Transformers", "scikit-learn", "PyMuPDF", "OpenRouter API", "Mistral AI"],
       github: "https://github.com/zak-510/Candidate-Recommendation-Engine",
