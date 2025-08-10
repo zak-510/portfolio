@@ -49,7 +49,7 @@ const Education: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-mono text-white mb-4 cursor-pointer hover:opacity-80 transition-opacity">
               Education
             </h2>
           </div>
@@ -71,22 +71,22 @@ const Education: React.FC = () => {
                         />
                       </div>
                       <div>
-                        <h3 className="text-2xl font-bold text-white">
+                        <h3 className="text-2xl font-jetbrains-medium text-white">
                           {edu.school}
                         </h3>
-                        <p className="text-lg text-gray-300">
+                        <p className="text-lg text-gray-300 font-jetbrains">
                           {edu.degree}
                         </p>
                       </div>
                     </div>
 
                     <div className="flex flex-wrap items-center gap-4 mb-6">
-                      <div className="flex items-center space-x-2 text-gray-400">
+                      <div className="flex items-center space-x-2 text-gray-400 font-jetbrains">
                         <Calendar size={16} />
                         <span>{edu.period}</span>
                       </div>
                       {edu.gpa && (
-                        <div className="flex items-center space-x-2 text-gray-400">
+                        <div className="flex items-center space-x-2 text-gray-400 font-jetbrains">
                           <Award size={16} />
                           <span>{edu.gpa}</span>
                         </div>
@@ -94,7 +94,7 @@ const Education: React.FC = () => {
                     </div>
 
                     <div>
-                      <h4 className="text-lg font-semibold mb-3 flex items-center text-white">
+                      <h4 className="text-lg font-jetbrains-medium mb-3 flex items-center text-white">
                         <BookOpen size={20} className="mr-2" />
                         {edu.isPlanned ? 'Planned Relevant Coursework' : 'Relevant Coursework'}
                       </h4>
@@ -102,7 +102,7 @@ const Education: React.FC = () => {
                         {edu.courses.map((course, courseIndex) => (
                           <span
                             key={courseIndex}
-                            className="px-3 py-1 rounded-full text-sm font-medium transition-all duration-300 bg-gray-700 text-gray-300 hover:bg-gray-600"
+                            className="px-3 py-1 rounded-full text-sm font-jetbrains transition-all duration-300 bg-gray-700 text-gray-300 hover:bg-gray-600"
                           >
                             {course}
                           </span>

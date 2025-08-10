@@ -85,7 +85,7 @@ const Skills: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-mono text-white mb-4 cursor-pointer hover:opacity-80 transition-opacity">
               Technical Skills
             </h2>
           </div>
@@ -113,7 +113,7 @@ const Skills: React.FC = () => {
           <div className="text-center mb-8">
             <button
               onClick={() => setShowSkills(!showSkills)}
-              className="mx-auto flex items-center justify-center px-4 py-3 bg-gradient-to-r from-blue-500 to-yellow-500 rounded-lg text-sm sm:text-base font-medium hover:from-blue-600 hover:to-yellow-600 transition-all duration-300 transform hover:scale-105"
+              className="mx-auto flex items-center justify-center px-4 py-3 bg-gradient-to-r from-blue-500 to-yellow-500 rounded-lg text-sm sm:text-base font-jetbrains-medium hover:from-blue-600 hover:to-yellow-600 transition-all duration-300 transform hover:scale-105"
             >
               <span>View All Technologies</span>
             </button>
@@ -158,7 +158,7 @@ const Skills: React.FC = () => {
                   placeholder="Search technologies..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full pl-10 pr-10 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                  className="w-full pl-10 pr-10 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 font-jetbrains"
                 />
                 {searchTerm && (
                   <button
@@ -177,7 +177,7 @@ const Skills: React.FC = () => {
                     key={categoryIndex}
                     className="glass rounded-xl p-4 hover:scale-[1.02] transition-all duration-300"
                   >
-                    <h4 className="text-lg font-bold text-white mb-4">
+                    <h4 className="text-lg font-jetbrains-medium text-white mb-4">
                       {category.title}
                     </h4>
                     <div className="space-y-3">
@@ -193,7 +193,7 @@ const Skills: React.FC = () => {
                               className="w-full h-full object-contain"
                             />
                           </div>
-                          <span className="text-white text-sm font-medium">
+                          <span className="text-white text-sm font-jetbrains">
                             {skill.name}
                           </span>
                         </div>
@@ -205,7 +205,7 @@ const Skills: React.FC = () => {
 
               {searchTerm && filteredCategories.length === 0 && (
                 <div className="text-center py-6">
-                  <p className="text-gray-400 text-lg">
+                  <p className="text-gray-400 text-lg font-jetbrains">
                     No skills found matching "{searchTerm}"
                   </p>
                 </div>

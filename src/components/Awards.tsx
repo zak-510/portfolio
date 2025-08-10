@@ -33,7 +33,7 @@ const Awards = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-mono text-white mb-4 cursor-pointer hover:opacity-80 transition-opacity">
               Awards & Honors
             </h2>
           </div>
@@ -53,7 +53,7 @@ const Awards = () => {
                         className="w-12 h-12 object-contain"
                       />
                     </div>
-                    <h3 className="text-2xl font-bold text-white">
+                    <h3 className="text-2xl font-jetbrains-medium text-white">
                       {award.title}
                     </h3>
                   </div>
@@ -66,11 +66,11 @@ const Awards = () => {
                     <ExternalLink size={20} />
                   </a>
                 </div>
-                <div className="flex items-center mb-4 text-sm text-gray-400">
+                <div className="flex items-center mb-4 text-sm text-gray-400 font-jetbrains">
                   <Calendar size={16} className="mr-2" />
                   <span>{award.date}</span>
                 </div>
-                <p className="text-gray-300 leading-relaxed">
+                <p className="text-gray-300 leading-relaxed font-jetbrains">
                   {award.description}
                 </p>
               </div>
