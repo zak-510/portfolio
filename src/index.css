@@ -409,11 +409,23 @@ html {
   transform: translateX(0);
 }
 
-/* Glassmorphism effect for dark mode */
+/* Dark theme color variables */
+:root {
+  --dark-bg: rgb(26, 30, 36);
+  --dark-border: rgb(16, 17, 20);
+  --dark-muted: rgb(18, 20, 23);
+}
+
+/* Updated glassmorphism effect with darker color scheme */
 .glass {
-  background: rgba(15, 23, 42, 0.3);
+  background: rgba(18, 19, 21, 0.6);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(100, 100, 101, 0.3);
+  transition: all 0.3s ease;
+}
+
+.glass:hover {
+  background: rgba(11, 11, 11, 0.8);
 }
 
 /* Smooth transitions */

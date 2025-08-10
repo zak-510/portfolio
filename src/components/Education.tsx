@@ -102,7 +102,7 @@ const Education: React.FC = () => {
                         {edu.courses.map((course, courseIndex) => (
                           <span
                             key={courseIndex}
-                            className="px-3 py-1 rounded-full text-sm font-jetbrains transition-all duration-300 bg-gray-700 text-gray-300 hover:bg-gray-600"
+                            className="px-3 py-1 rounded-full text-sm font-jetbrains transition-all duration-300 bg-gray-800/80 text-gray-300 hover:bg-gray-700/90 border border-gray-600/30"
                           >
                             {course}
                           </span>

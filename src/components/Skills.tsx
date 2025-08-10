@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { createPortal } from 'react-dom';
-import { Search, X, Code2, ChevronDown, ChevronUp } from 'lucide-react';
+import { Search, X } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const Skills: React.FC = () => {
@@ -184,9 +184,9 @@ const Skills: React.FC = () => {
                       {category.skills.map((skill, skillIndex) => (
                         <div
                           key={skillIndex}
-                          className="flex items-center p-2 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition-all duration-300"
+                          className="flex items-center p-2 bg-gray-800/60 rounded-lg hover:bg-gray-800/80 transition-all duration-300 border border-gray-600/40"
                         >
-                          <div className="w-8 h-8 rounded-lg bg-gray-700 flex items-center justify-center p-1 mr-3">
+                          <div className="w-8 h-8 rounded-lg bg-gray-700/60 border border-gray-600/50 flex items-center justify-center p-1 mr-3">
                             <img
                               src={skill.logo}
                               alt={skill.name}

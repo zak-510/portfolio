@@ -138,7 +138,7 @@ const Projects: React.FC = () => {
                       {project.techStack.map((tech, techIndex) => (
                         <span
                           key={techIndex}
-                          className="px-2 py-1 bg-gray-700 text-gray-300 rounded-full text-xs font-jetbrains hover:bg-gray-600 transition-colors"
+                          className="px-2 py-1 bg-gray-800/80 text-gray-300 rounded-full text-xs font-jetbrains hover:bg-gray-700/90 border border-gray-600/30 transition-colors"
                         >
                           {tech}
                         </span>
