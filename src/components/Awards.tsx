@@ -61,16 +61,16 @@ const Awards = () => {
                     href={award.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 rounded-full transition-all hover:scale-110 text-gray-300 hover:text-white hover:bg-gray-600"
+                    className="p-2 rounded-full transition-all hover:scale-110 text-gray-200 hover:text-white hover:bg-gray-600"
                   >
                     <ExternalLink size={20} />
                   </a>
                 </div>
-                <div className="flex items-center mb-4 text-sm text-gray-400 font-jetbrains">
+                <div className="flex items-center mb-4 text-sm text-gray-300 font-jetbrains">
                   <Calendar size={16} className="mr-2" />
                   <span>{award.date}</span>
                 </div>
-                <p className="text-gray-300 leading-relaxed font-jetbrains">
+                <p className="text-gray-200 leading-relaxed font-jetbrains">
                   {award.description}
                 </p>
               </div>

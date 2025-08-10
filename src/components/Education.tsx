@@ -74,19 +74,19 @@ const Education: React.FC = () => {
                         <h3 className="text-2xl font-jetbrains-medium text-white">
                           {edu.school}
                         </h3>
-                        <p className="text-lg text-gray-300 font-jetbrains">
+                        <p className="text-lg text-gray-200 font-jetbrains">
                           {edu.degree}
                         </p>
                       </div>
                     </div>
 
                     <div className="flex flex-wrap items-center gap-4 mb-6">
-                      <div className="flex items-center space-x-2 text-gray-400 font-jetbrains">
+                      <div className="flex items-center space-x-2 text-gray-300 font-jetbrains">
                         <Calendar size={16} />
                         <span>{edu.period}</span>
                       </div>
                       {edu.gpa && (
-                        <div className="flex items-center space-x-2 text-gray-400 font-jetbrains">
+                        <div className="flex items-center space-x-2 text-gray-300 font-jetbrains">
                           <Award size={16} />
                           <span>{edu.gpa}</span>
                         </div>
@@ -102,7 +102,7 @@ const Education: React.FC = () => {
                         {edu.courses.map((course, courseIndex) => (
                           <span
                             key={courseIndex}
-                            className="px-3 py-1 rounded-full text-sm font-jetbrains transition-all duration-300 bg-gray-800/80 text-gray-300 hover:bg-gray-700/90 border border-gray-600/30"
+                            className="px-3 py-1 rounded-full text-sm font-jetbrains transition-all duration-300 bg-gray-700 text-gray-200 hover:bg-gray-600"
                           >
                             {course}
                           </span>

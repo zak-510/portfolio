@@ -25,7 +25,7 @@ const Contact: React.FC = () => {
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-mono text-white mb-4 cursor-pointer hover:opacity-80 transition-opacity">
               Get in Touch
             </h2>
-            <p className="text-lg text-gray-300 mb-8 flex-grow leading-relaxed max-w-2xl mx-auto font-jetbrains">
+            <p className="text-lg text-gray-200 mb-8 flex-grow leading-relaxed max-w-2xl mx-auto font-jetbrains">
               I'm currently open to new opportunities and collaborations. Whether you have a project in mind, a question, or just want to say hi, my inbox is always open.
             </p>
             
@@ -47,7 +47,7 @@ const Contact: React.FC = () => {
               rel="noopener noreferrer"
               className="group p-3 rounded-full transition-all duration-300 hover:scale-110 hover:bg-blue-500/10 opacity-60 hover:opacity-100"
             >
-              <Linkedin size={28} className="text-gray-400 group-hover:text-blue-400 transition-colors" />
+              <Linkedin size={28} className="text-gray-300 group-hover:text-blue-400 transition-colors" />
             </a>
 
             {/* GitHub */}
@@ -57,7 +57,7 @@ const Contact: React.FC = () => {
               rel="noopener noreferrer"
               className="group p-3 rounded-full transition-all duration-300 hover:scale-110 hover:bg-gray-500/10 opacity-60 hover:opacity-100"
             >
-              <Github size={28} className="text-gray-400 group-hover:text-white transition-colors" />
+              <Github size={28} className="text-gray-300 group-hover:text-white transition-colors" />
             </a>
 
             {/* Email */}
@@ -65,7 +65,7 @@ const Contact: React.FC = () => {
               onClick={handleEmailClick}
               className="group p-3 rounded-full transition-all duration-300 hover:scale-110 hover:bg-yellow-500/10 opacity-60 hover:opacity-100"
             >
-              <Mail size={28} className="text-gray-400 group-hover:text-yellow-400 transition-colors" />
+              <Mail size={28} className="text-gray-300 group-hover:text-yellow-400 transition-colors" />
             </button>
           </div>
         </div>

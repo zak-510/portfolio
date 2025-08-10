@@ -94,7 +94,7 @@ const Projects: React.FC = () => {
                           href={project.demo}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="px-2 py-1 rounded-full transition-all hover:scale-110 text-gray-300 hover:text-white hover:bg-gray-600 flex items-center space-x-1"
+                          className="px-2 py-1 rounded-full transition-all hover:scale-110 text-gray-200 hover:text-white hover:bg-gray-600 flex items-center space-x-1"
                         >
                           <ExternalLink size={14} />
                           <span className="text-xs font-jetbrains">Demo</span>
@@ -104,19 +104,19 @@ const Projects: React.FC = () => {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-1.5 rounded-full transition-all hover:scale-110 text-gray-300 hover:text-white hover:bg-gray-600"
+                        className="p-1.5 rounded-full transition-all hover:scale-110 text-gray-200 hover:text-white hover:bg-gray-600"
                       >
                         <Github size={16} />
                       </a>
                     </div>
                   </div>
 
-                  <div className="flex items-center mb-3 text-sm text-gray-400 font-jetbrains">
+                  <div className="flex items-center mb-3 text-sm text-gray-300 font-jetbrains">
                     <Calendar size={14} className="mr-2" />
                     <span>{project.period}</span>
                   </div>
 
-                  <p className="text-base text-gray-300 mb-4 flex-grow leading-relaxed font-jetbrains">
+                  <p className="text-base text-gray-200 mb-4 flex-grow leading-relaxed font-jetbrains">
                     {project.description}
                   </p>
 
@@ -124,7 +124,7 @@ const Projects: React.FC = () => {
                     <h4 className="text-base font-light text-white mb-2 font-mono">Key Highlights</h4>
                     <ul className="space-y-1">
                       {project.highlights.slice(0, 3).map((highlight, highlightIndex) => (
-                        <li key={highlightIndex} className="text-gray-300 flex items-start text-sm font-jetbrains">
+                        <li key={highlightIndex} className="text-gray-200 flex items-start text-sm font-jetbrains">
                           <TrendingUp size={14} className="text-blue-400 mr-2 mt-0.5 flex-shrink-0" />
                           {highlight}
                         </li>
@@ -138,7 +138,7 @@ const Projects: React.FC = () => {
                       {project.techStack.map((tech, techIndex) => (
                         <span
                           key={techIndex}
-                          className="px-2 py-1 bg-gray-800/80 text-gray-300 rounded-full text-xs font-jetbrains hover:bg-gray-700/90 border border-gray-600/30 transition-colors"
+                          className="px-2 py-1 bg-gray-700 text-gray-200 rounded-full text-xs font-jetbrains hover:bg-gray-600 transition-colors"
                         >
                           {tech}
                         </span>

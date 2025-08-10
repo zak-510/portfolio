@@ -44,31 +44,31 @@ const Header: React.FC<HeaderProps> = ({ mobileMenuOpen, setMobileMenuOpen }) =>
           <nav className="hidden md:flex items-center space-x-8 absolute left-1/2 transform -translate-x-1/2">
             <button
               onClick={() => scrollToSection('education')}
-              className="hover:text-yellow-400 transition-colors font-jetbrains text-gray-300 focus:outline-none"
+              className="hover:text-yellow-400 transition-colors font-jetbrains text-gray-200 focus:outline-none"
             >
               Education
             </button>
             <button
               onClick={() => scrollToSection('awards')}
-              className="hover:text-yellow-400 transition-colors font-jetbrains text-gray-300 focus:outline-none"
+              className="hover:text-yellow-400 transition-colors font-jetbrains text-gray-200 focus:outline-none"
             >
               Awards
             </button>
             <button
               onClick={() => scrollToSection('skills')}
-              className="hover:text-yellow-400 transition-colors font-jetbrains text-gray-300 focus:outline-none"
+              className="hover:text-yellow-400 transition-colors font-jetbrains text-gray-200 focus:outline-none"
             >
               Skills
             </button>
             <button
               onClick={() => scrollToSection('projects')}
-              className="hover:text-yellow-400 transition-colors font-jetbrains text-gray-300 focus:outline-none"
+              className="hover:text-yellow-400 transition-colors font-jetbrains text-gray-200 focus:outline-none"
             >
               Projects
             </button>
             <button
               onClick={() => scrollToSection('contact')}
-              className="hover:text-yellow-400 transition-colors font-jetbrains text-gray-300 focus:outline-none"
+              className="hover:text-yellow-400 transition-colors font-jetbrains text-gray-200 focus:outline-none"
             >
               Contact
             </button>
@@ -86,7 +86,7 @@ const Header: React.FC<HeaderProps> = ({ mobileMenuOpen, setMobileMenuOpen }) =>
                   setMobileMenuOpen(!mobileMenuOpen);
                 });
               }}
-              className="md:hidden p-1.5 lg:p-3 min-w-[36px] min-h-[36px] lg:min-w-[44px] lg:min-h-[44px] rounded-full transition-all text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none active:bg-gray-600 touch-manipulation flex items-center justify-center"
+              className="md:hidden p-1.5 lg:p-3 min-w-[36px] min-h-[36px] lg:min-w-[44px] lg:min-h-[44px] rounded-full transition-all text-gray-200 hover:text-white hover:bg-gray-700 focus:outline-none active:bg-gray-600 touch-manipulation flex items-center justify-center"
             >
               {mobileMenuOpen ? <X size={18} className="lg:w-5 lg:h-5" /> : <Menu size={18} className="lg:w-5 lg:h-5" />}
             </button>
@@ -99,31 +99,31 @@ const Header: React.FC<HeaderProps> = ({ mobileMenuOpen, setMobileMenuOpen }) =>
             <nav className="flex flex-col space-y-2 lg:space-y-4">
               <button
                 onClick={() => scrollToSection('education')}
-                className="text-left hover:text-yellow-400 transition-colors text-gray-300 focus:outline-none font-jetbrains"
+                className="text-left hover:text-yellow-400 transition-colors text-gray-200 focus:outline-none font-jetbrains"
               >
                 Education
               </button>
               <button
                 onClick={() => scrollToSection('awards')}
-                className="text-left hover:text-yellow-400 transition-colors text-gray-300 focus:outline-none font-jetbrains"
+                className="text-left hover:text-yellow-400 transition-colors text-gray-200 focus:outline-none font-jetbrains"
               >
                 Awards
               </button>
               <button
                 onClick={() => scrollToSection('skills')}
-                className="text-left hover:text-yellow-400 transition-colors text-gray-300 focus:outline-none font-jetbrains"
+                className="text-left hover:text-yellow-400 transition-colors text-gray-200 focus:outline-none font-jetbrains"
               >
                 Skills
               </button>
               <button
                 onClick={() => scrollToSection('projects')}
-                className="text-left hover:text-yellow-400 transition-colors text-gray-300 focus:outline-none font-jetbrains"
+                className="text-left hover:text-yellow-400 transition-colors text-gray-200 focus:outline-none font-jetbrains"
               >
                 Projects
               </button>
               <button
                 onClick={() => scrollToSection('contact')}
-                className="text-left hover:text-yellow-400 transition-colors text-gray-300 focus:outline-none font-jetbrains"
+                className="text-left hover:text-yellow-400 transition-colors text-gray-200 focus:outline-none font-jetbrains"
               >
                 Contact
               </button>
