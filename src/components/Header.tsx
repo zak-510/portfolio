@@ -95,7 +95,7 @@ const Header: React.FC<HeaderProps> = ({ mobileMenuOpen, setMobileMenuOpen }) =>
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden mt-4 py-4 lg:mt-6 lg:py-6 border-t border-gray-700 transition-all duration-300">
+          <div className="md:hidden mt-4 py-4 lg:mt-6 lg:py-6 border-t border-gray-700 transition-all duration-300 bg-black/80 backdrop-blur-lg rounded-lg">
             <nav className="flex flex-col space-y-2 lg:space-y-4">
               <button
                 onClick={() => scrollToSection('education')}
