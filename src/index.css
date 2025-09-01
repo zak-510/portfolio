@@ -416,16 +416,16 @@ html {
   --dark-muted: rgb(18, 20, 23);
 }
 
-/* Updated glassmorphism effect with darker color scheme */
+/* Blue glassmorphism effect */
 .glass {
-  background: rgba(18, 19, 21, 0.6);
+  background: #0f172a4d;
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(100, 100, 101, 0.3);
-  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, .1);
 }
 
-.glass:hover {
-  background: rgba(11, 11, 11, 0.8);
+.duration-300 {
+  transition-duration: .3s;
 }
 
 /* Smooth transitions */

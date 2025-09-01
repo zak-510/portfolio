@@ -81,7 +81,7 @@ const Projects: React.FC = () => {
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="group overflow-hidden rounded-xl transition-all duration-300 hover:scale-[1.02] glass"
+                className="group overflow-hidden rounded-xl glass hover:scale-[1.02] transition-all duration-300"
               >
                 <div className="p-6">
                   <div className="flex items-start justify-between mb-3">
