@@ -1,115 +1,200 @@
 import React, { useState } from 'react';
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import { Search, X, Code2, ChevronDown, ChevronUp } from 'lucide-react';
 
 const Skills: React.FC = () => {
-  const { elementRef, isVisible } = useScrollAnimation({ threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-  const [showAll, setShowAll] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [showSkills, setShowSkills] = useState(false);
 
-  const skills = [
-    { name: 'Python', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
-    { name: 'JavaScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
-    { name: 'Java', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg' },
-    { name: 'PyTorch', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg' },
-    { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
-    { name: 'Node.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
-    { name: 'TypeScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' },
-    { name: 'HTML5', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
-    { name: 'CSS3', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
-    { name: 'Git', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
-    { name: 'Firebase', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg' },
-    { name: 'MySQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
-    { name: 'MongoDB', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg' },
-    { name: 'Docker', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
-    { name: 'AWS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg' },
-    { name: 'VS Code', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg' },
-    { name: 'Linux', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg' },
-    { name: 'PostgreSQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
-    { name: 'TensorFlow', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg' },
-    { name: 'Tailwind CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg' },
-    { name: 'Express.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg' },
-    { name: 'NumPy', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg' },
-    { name: 'pandas', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg' },
-    { name: 'OpenCV', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg' }
+  const skillCategories = [
+    {
+      title: "Languages",
+      skills: [
+        { name: "Python", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+        { name: "JavaScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+        { name: "Java", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" }
+      ]
+    },
+    {
+      title: "Libraries/Frameworks",
+      skills: [
+        { name: "PyTorch", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" },
+        { name: "scikit-learn", logo: "https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" },
+        { name: "OpenCV", logo: "https://opencv.org/wp-content/uploads/2020/07/OpenCV_logo_black_.png" },
+        { name: "NumPy", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" },
+        { name: "pandas", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" },
+        { name: "Matplotlib", logo: "https://matplotlib.org/stable/_images/sphx_glr_logos2_003.png" }
+      ]
+    },
+    {
+      title: "Web Technologies",
+      skills: [
+        { name: "React", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+        { name: "Express.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
+        { name: "REST APIs", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" },
+        { name: "Firebase", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" },
+        { name: "HTML", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
+        { name: "CSS", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" }
+      ]
+    },
+    {
+      title: "Tools",
+      skills: [
+        { name: "Git", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
+        { name: "Jupyter Notebook", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" },
+        { name: "Google Colab", logo: "https://colab.research.google.com/img/colab_favicon_256px.png" },
+        { name: "VS Code", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" }
+      ]
+    },
+    {
+      title: "Databases",
+      skills: [
+        { name: "MySQL", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+        { name: "NoSQL", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" }
+      ]
+    }
   ];
 
-  const displayedSkills = showAll ? skills : skills.slice(0, 12);
-  const duplicatedSkills = [...displayedSkills, ...displayedSkills];
+  // Create a flattened array of all skills for the horizontal scroll
+  const allSkills = skillCategories.flatMap(category => category.skills);
+  const techLogos = allSkills.map(skill => ({
+    name: skill.name,
+    logo: skill.logo
+  }));
+
+  // Filter skills based on search term
+  const filteredCategories = skillCategories.map(category => ({
+    ...category,
+    skills: category.skills.filter(skill =>
+      skill.name.toLowerCase().includes(searchTerm.toLowerCase())
+    )
+  })).filter(category => category.skills.length > 0);
 
   return (
-    <section 
-      id="skills" 
-      ref={elementRef}
-      className={`py-20 bg-transparent smooth-scroll-animate ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-      }`}
-    >
+    <section id="skills" className="py-20 bg-transparent">
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-mono text-white mb-4 cursor-pointer hover:opacity-80 transition-opacity">
               Technical Skills
             </h2>
           </div>
 
-          {/* Skills Carousel */}
-          <div className="relative overflow-hidden mb-8">
+          {/* Always visible horizontal flowing tech skills */}
+          <div className="relative mb-8 overflow-hidden">
             <div className="flex space-x-4 animate-scroll-fast">
-              {duplicatedSkills.map((skill, index) => (
+              {[...techLogos, ...techLogos].map((tech, index) => (
                 <div
                   key={index}
-                  className="flex-shrink-0 flex items-center justify-center p-3 rounded-xl transition-all duration-200" style={{backgroundColor: '#374151'}}
+                  className="tech-logo-container flex-shrink-0 w-16 h-16 rounded-lg bg-gray-800 flex items-center justify-center shadow-md transform hover:scale-110 transition-transform duration-300 p-2"
                 >
-                  <img 
-                    src={skill.icon} 
-                    alt={skill.name}
-                    className="w-8 h-8 object-contain relative z-10"
-                    title={skill.name}
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.style.display = 'none';
-                    }}
+                  <img
+                    src={tech.logo}
+                    alt={tech.name}
+                    className="w-10 h-10 object-contain relative z-10"
+                    title={tech.name}
                   />
                 </div>
               ))}
             </div>
           </div>
 
-          {/* View All Technologies Button */}
-          <div className="text-center">
+          {/* View Tech Button */}
+          <div className="text-center mb-8">
             <button
-              onClick={() => setShowAll(!showAll)}
+              onClick={() => setShowSkills(!showSkills)}
               className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500 to-yellow-500 rounded-lg text-white font-jetbrains-medium hover:from-blue-600 hover:to-yellow-600 transition-all duration-300 transform hover:scale-105"
             >
-              {showAll ? 'Show Less' : 'View All Technologies'}
+              View All Technologies
             </button>
           </div>
+        </div>
+      </div>
 
-          {/* Static Skills Grid (when showing all) */}
-          {showAll && (
-            <div className="mt-8 animate-fade-in">
-              <div className="grid grid-cols-6 sm:grid-cols-8 md:grid-cols-10 lg:grid-cols-12 gap-3">
-                {skills.map((skill, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center justify-center p-3 rounded-lg transition-all duration-200" style={{backgroundColor: '#374151'}}
+      {/* Skills Overlay Modal */}
+      {showSkills && (
+        <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-6">
+          <div className="glass rounded-xl max-w-5xl w-full max-h-[80vh] overflow-y-auto relative animate-fade-in">
+            {/* Close Button */}
+            <button
+              onClick={() => setShowSkills(false)}
+              className="absolute top-4 right-4 z-10 p-2 bg-gray-800 hover:bg-gray-700 rounded-lg text-white transition-colors"
+            >
+              <X size={24} />
+            </button>
+
+            <div className="p-6">
+              <div className="text-center mb-6">
+                <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
+                  Technologies
+                </h3>
+              </div>
+
+              {/* Search Bar */}
+              <div className="relative mb-6 max-w-md mx-auto">
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <Search size={20} className="text-gray-400" />
+                </div>
+                <input
+                  type="text"
+                  placeholder="Search skills..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="w-full pl-10 pr-10 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                />
+                {searchTerm && (
+                  <button
+                    onClick={() => setSearchTerm('')}
+                    className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-white transition-colors"
                   >
-                    <img 
-                      src={skill.icon} 
-                      alt={skill.name}
-                      className="w-8 h-8 object-contain relative z-10"
-                      title={skill.name}
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.style.display = 'none';
-                      }}
-                    />
+                    <X size={20} />
+                  </button>
+                )}
+              </div>
+
+              {/* Skills Categories */}
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {filteredCategories.map((category, categoryIndex) => (
+                  <div
+                    key={categoryIndex}
+                    className="glass rounded-xl p-4 hover:scale-[1.02] transition-all duration-300"
+                  >
+                    <h4 className="text-lg font-bold text-white mb-4">
+                      {category.title}
+                    </h4>
+                    <div className="space-y-3">
+                      {category.skills.map((skill, skillIndex) => (
+                        <div
+                          key={skillIndex}
+                          className="flex items-center p-2 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition-all duration-300"
+                        >
+                          <div className="w-8 h-8 rounded-lg bg-gray-700 flex items-center justify-center p-1 mr-3">
+                            <img
+                              src={skill.logo}
+                              alt={skill.name}
+                              className="w-full h-full object-contain"
+                            />
+                          </div>
+                          <span className="text-white text-sm font-medium">
+                            {skill.name}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 ))}
               </div>
+
+              {searchTerm && filteredCategories.length === 0 && (
+                <div className="text-center py-6">
+                  <p className="text-gray-400 text-lg">
+                    No skills found matching "{searchTerm}"
+                  </p>
+                </div>
+              )}
             </div>
-          )}
+          </div>
         </div>
-      </div>
+      )}
     </section>
   );
 };

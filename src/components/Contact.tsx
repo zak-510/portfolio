@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Linkedin, Github } from 'lucide-react';
+
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const Contact: React.FC = () => {
@@ -38,36 +38,7 @@ const Contact: React.FC = () => {
             </button>
           </div>
 
-          {/* Social Icons */}
-          <div className="flex justify-center space-x-6">
-            {/* LinkedIn */}
-            <a
-              href="https://www.linkedin.com/in/zakaria-al-alie-82a43b354/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group p-3 rounded-full transition-all duration-300 hover:scale-110 hover:bg-blue-500/10 opacity-60 hover:opacity-100"
-            >
-              <Linkedin size={28} className="text-gray-300 group-hover:text-blue-400 transition-colors" />
-            </a>
 
-            {/* GitHub */}
-            <a
-              href="https://github.com/zak-510"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group p-3 rounded-full transition-all duration-300 hover:scale-110 hover:bg-gray-500/10 opacity-60 hover:opacity-100"
-            >
-              <Github size={28} className="text-gray-300 group-hover:text-white transition-colors" />
-            </a>
-
-            {/* Email */}
-            <button
-              onClick={handleEmailClick}
-              className="group p-3 rounded-full transition-all duration-300 hover:scale-110 hover:bg-yellow-500/10 opacity-60 hover:opacity-100"
-            >
-              <Mail size={28} className="text-gray-300 group-hover:text-yellow-400 transition-colors" />
-            </button>
-          </div>
         </div>
       </div>
     </section>
