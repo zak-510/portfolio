@@ -1,5 +1,4 @@
-import React from 'react';
-import { Calendar, ExternalLink } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const Awards = () => {
@@ -38,41 +37,52 @@ const Awards = () => {
             </h2>
           </div>
           
-          <div className="space-y-8">
+          <div className="space-y-6">
             {awards.map((award, index) => (
               <div
                 key={index}
-                className="group p-8 rounded-xl glass hover:scale-[1.02] transition-all duration-300"
+                className="group relative pl-8 py-6 transition-all duration-300 hover:translate-x-2"
               >
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center">
-                    <div className="p-2 mr-4">
-                      <img 
-                        src={award.logo} 
-                        alt={`${award.title} logo`}
-                        className="w-12 h-12 object-contain"
-                      />
+                {/* White accent line */}
+                <div className="absolute left-0 top-0 bottom-0 w-1 rounded-full bg-white"></div>
+                
+                <div className="space-y-4">
+                  {/* Header with logo and title */}
+                  <div className="flex items-start justify-between">
+                    <div className="flex items-start space-x-4">
+                      <div className="flex-shrink-0 mt-1">
+                        <img 
+                          src={award.logo} 
+                          alt={`${award.title} logo`}
+                          className="w-8 h-8 object-contain"
+                        />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-xl font-medium mb-1 text-white">
+                          {award.title}
+                        </h3>
+                        <p className="text-gray-400 text-sm mb-3">
+                          {award.date}
+                        </p>
+                      </div>
                     </div>
-                    <h3 className="text-2xl font-jetbrains-medium text-white">
-                      {award.title}
-                    </h3>
+                    <a
+                      href={award.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-2 rounded-lg transition-all hover:scale-110 text-gray-400 hover:text-white hover:bg-gray-800/50"
+                    >
+                      <ExternalLink size={16} />
+                    </a>
                   </div>
-                  <a
-                    href={award.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-2 rounded-full transition-all hover:scale-110 text-gray-200 hover:text-white hover:bg-gray-600"
-                  >
-                    <ExternalLink size={20} />
-                  </a>
+
+                  {/* Description */}
+                  <div className="ml-12">
+                    <p className="text-gray-300 text-sm leading-relaxed">
+                      {award.description}
+                    </p>
+                  </div>
                 </div>
-                <div className="flex items-center mb-4 text-sm text-gray-300 font-jetbrains">
-                  <Calendar size={16} className="mr-2" />
-                  <span>{award.date}</span>
-                </div>
-                <p className="text-gray-200 leading-relaxed font-jetbrains">
-                  {award.description}
-                </p>
               </div>
             ))}
           </div>

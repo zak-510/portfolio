@@ -1,20 +1,29 @@
 <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-  <!-- Black background -->
+  <!-- Black starry background -->
   <rect width="32" height="32" fill="#000000"/>
   
-  <!-- Blue and yellow gradient definition -->
+  <!-- Floating particles/stars -->
+  <circle cx="6" cy="8" r="0.5" fill="white" opacity="0.6"/>
+  <circle cx="25" cy="6" r="0.3" fill="white" opacity="0.8"/>
+  <circle cx="28" cy="15" r="0.4" fill="white" opacity="0.5"/>
+  <circle cx="4" cy="24" r="0.3" fill="white" opacity="0.7"/>
+  <circle cx="22" cy="28" r="0.5" fill="white" opacity="0.6"/>
+  <circle cx="12" cy="18" r="0.2" fill="white" opacity="0.4"/>
+  <circle cx="8" cy="28" r="0.3" fill="white" opacity="0.5"/>
+  
+  <!-- Gradient definition for ZA text -->
   <defs>
-    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#eab308;stop-opacity:1" />
+    <linearGradient id="redGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ef4444;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#dc2626;stop-opacity:1" />
     </linearGradient>
   </defs>
   
-  <!-- ZA text -->
+  <!-- ZA text with red gradient -->
   <text x="16" y="22" 
-        font-family="Arial, sans-serif" 
+        font-family="system-ui, -apple-system, sans-serif" 
         font-size="14" 
         font-weight="bold" 
         text-anchor="middle" 
-        fill="url(#textGradient)">ZA</text>
-</svg> 
+        fill="url(#redGradient)">ZA</text>
+</svg>

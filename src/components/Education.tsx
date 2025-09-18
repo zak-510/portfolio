@@ -1,5 +1,4 @@
 import React from 'react';
-import { Award, BookOpen, Calendar } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const Education: React.FC = () => {
@@ -17,7 +16,7 @@ const Education: React.FC = () => {
         "Program Structures",
         "Data Structures",
         "Calculus II",
-        "Multivariable Calculus"
+        "Linear Algebra and Differential Equations"
       ],
       isPlanned: true
     },
@@ -54,60 +53,56 @@ const Education: React.FC = () => {
             </h2>
           </div>
 
-          <div className="space-y-8">
+          <div className="space-y-6">
             {education.map((edu, index) => (
               <div
                 key={index}
-                className="group p-8 rounded-xl glass hover:scale-[1.02] transition-all duration-300"
+                className="group relative pl-8 py-6 transition-all duration-300 hover:translate-x-2"
               >
-                <div className="flex flex-col lg:flex-row lg:items-start lg:space-x-8">
-                  <div className="flex-1">
-                    <div className="flex items-center mb-4">
-                      <div className="p-2 mr-4">
-                        <img 
-                          src={edu.logo} 
-                          alt={`${edu.school} logo`}
-                          className="w-12 h-12 object-contain"
-                        />
-                      </div>
-                      <div>
-                        <h3 className="text-2xl font-jetbrains-medium text-white">
-                          {edu.school}
-                        </h3>
-                        <p className="text-lg text-gray-200 font-jetbrains">
-                          {edu.degree}
-                        </p>
-                      </div>
+                {/* White accent line */}
+                <div className="absolute left-0 top-0 bottom-0 w-1 rounded-full bg-white"></div>
+                
+                <div className="space-y-4">
+                  {/* Header with logo and title */}
+                  <div className="flex items-start space-x-4">
+                    <div className="flex-shrink-0 mt-1">
+                      <img 
+                        src={edu.logo} 
+                        alt={`${edu.school} logo`}
+                        className="w-8 h-8 object-contain"
+                      />
                     </div>
-
-                    <div className="flex flex-wrap items-center gap-4 mb-6">
-                      <div className="flex items-center space-x-2 text-gray-300 font-jetbrains">
-                        <Calendar size={16} />
-                        <span>{edu.period}</span>
-                      </div>
-                      {edu.gpa && (
-                        <div className="flex items-center space-x-2 text-gray-300 font-jetbrains">
-                          <Award size={16} />
-                          <span>{edu.gpa}</span>
-                        </div>
-                      )}
+                    <div className="flex-1">
+                      <h3 className="text-xl font-medium mb-1 text-white">
+                        {edu.degree}
+                      </h3>
+                      <p className="text-gray-300 font-medium text-lg">
+                        {edu.school}
+                      </p>
                     </div>
+                  </div>
 
-                    <div>
-                      <h4 className="text-lg font-jetbrains-medium mb-3 flex items-center text-white">
-                        <BookOpen size={20} className="mr-2" />
-                        {edu.isPlanned ? 'Planned Relevant Coursework' : 'Relevant Coursework'}
-                      </h4>
-                      <div className="flex flex-wrap gap-2">
-                        {edu.courses.map((course, courseIndex) => (
-                          <span
-                            key={courseIndex}
-                            className="px-3 py-1 rounded-full text-sm font-jetbrains transition-all duration-300 bg-gray-700 text-gray-200 hover:bg-gray-600"
-                          >
-                            {course}
-                          </span>
-                        ))}
-                      </div>
+                  {/* Period */}
+                  <div className="ml-12">
+                    <p className="text-gray-400 text-sm mb-4">
+                      {edu.period}
+                    </p>
+                  </div>
+
+                  {/* Coursework */}
+                  <div className="ml-12">
+                    <h4 className="text-sm font-medium text-gray-300 mb-3">
+                      {edu.isPlanned ? 'Planned Relevant Coursework' : 'Relevant Coursework'}
+                    </h4>
+                    <div className="flex flex-wrap gap-2">
+                      {edu.courses.map((course, courseIndex) => (
+                        <span
+                          key={courseIndex}
+                          className="text-xs text-gray-400 bg-gray-800/30 px-2 py-1 rounded"
+                        >
+                          {course}
+                        </span>
+                      ))}
                     </div>
                   </div>
                 </div>

@@ -35,60 +35,73 @@ const Header: React.FC<HeaderProps> = ({ mobileMenuOpen, setMobileMenuOpen }) =>
     }`}>
       <div className="container mx-auto px-4 py-4 lg:py-6">
         <div className="flex items-center justify-between relative">
-          {/* Left side - Logo/Brand (empty for now) */}
+          {/* Left side - Empty */}
           <div className="flex-1 md:flex-none">
-            {/* This space can be used for a logo later */}
+            {/* Empty space */}
           </div>
 
           {/* Center - Desktop Navigation (Absolutely positioned for perfect centering) */}
           <nav className="hidden md:flex items-center space-x-8 absolute left-1/2 transform -translate-x-1/2">
             <button
-              onClick={() => scrollToSection('education')}
-              className="hover:text-yellow-400 transition-colors font-jetbrains text-gray-200 focus:outline-none"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="hover:text-red-500 transition-colors font-mono text-gray-300 focus:outline-none"
             >
-              Education
+              Home
             </button>
             <button
-              onClick={() => scrollToSection('awards')}
-              className="hover:text-yellow-400 transition-colors font-jetbrains text-gray-200 focus:outline-none"
+              onClick={() => scrollToSection('education')}
+              className="hover:text-red-500 transition-colors font-mono text-gray-300 focus:outline-none"
             >
-              Awards
+              About
             </button>
             <button
               onClick={() => scrollToSection('skills')}
-              className="hover:text-yellow-400 transition-colors font-jetbrains text-gray-200 focus:outline-none"
+              className="hover:text-red-500 transition-colors font-mono text-gray-300 focus:outline-none"
             >
               Skills
             </button>
             <button
               onClick={() => scrollToSection('projects')}
-              className="hover:text-yellow-400 transition-colors font-jetbrains text-gray-200 focus:outline-none"
+              className="hover:text-red-500 transition-colors font-mono text-gray-300 focus:outline-none"
             >
               Projects
             </button>
             <button
+              onClick={() => scrollToSection('awards')}
+              className="hover:text-red-500 transition-colors font-mono text-gray-300 focus:outline-none"
+            >
+              Experience
+            </button>
+            <button
               onClick={() => scrollToSection('contact')}
-              className="hover:text-yellow-400 transition-colors font-jetbrains text-gray-200 focus:outline-none"
+              className="hover:text-red-500 transition-colors font-mono text-gray-300 focus:outline-none"
             >
               Contact
             </button>
           </nav>
 
-          {/* Right side - Mobile Menu Toggle */}
-          <div className="flex items-center space-x-2 sm:space-x-4 flex-1 lg:flex-none justify-end">
+          {/* Right side - Resume Button & Mobile Menu */}
+          <div className="flex items-center space-x-4 flex-1 lg:flex-none justify-end">
+            <a
+              href="/Zakaria_Al-Alie_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden md:block px-4 py-2 border-2 border-red-500 text-white hover:bg-red-500 hover:text-white rounded-lg transition-all duration-300 font-medium text-sm"
+            >
+              Resume
+            </a>
             {/* Mobile Menu Toggle */}
             <button
               onClick={(e) => {
                 e.preventDefault();
                 e.stopPropagation();
-                // Use requestAnimationFrame to ensure the state update happens
                 requestAnimationFrame(() => {
                   setMobileMenuOpen(!mobileMenuOpen);
                 });
               }}
-              className="md:hidden p-1.5 lg:p-3 min-w-[36px] min-h-[36px] lg:min-w-[44px] lg:min-h-[44px] rounded-full transition-all text-gray-200 hover:text-white hover:bg-gray-700 focus:outline-none active:bg-gray-600 touch-manipulation flex items-center justify-center"
+              className="md:hidden p-2 border-2 border-red-500 text-white hover:bg-red-500 hover:text-white rounded-lg transition-all duration-300 focus:outline-none flex items-center justify-center"
             >
-              {mobileMenuOpen ? <X size={18} className="lg:w-5 lg:h-5" /> : <Menu size={18} className="lg:w-5 lg:h-5" />}
+              {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
           </div>
         </div>
@@ -96,37 +109,51 @@ const Header: React.FC<HeaderProps> = ({ mobileMenuOpen, setMobileMenuOpen }) =>
         {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div className="md:hidden mt-4 py-4 lg:mt-6 lg:py-6 border-t border-gray-700 transition-all duration-300 bg-black/80 backdrop-blur-lg rounded-lg">
-            <nav className="flex flex-col space-y-2 lg:space-y-4">
+            <nav className="flex flex-col space-y-4">
               <button
-                onClick={() => scrollToSection('education')}
-                className="text-left hover:text-yellow-400 transition-colors text-gray-200 focus:outline-none font-jetbrains"
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                className="text-left hover:text-red-500 transition-colors text-gray-300 focus:outline-none font-mono"
               >
-                Education
+                Home
               </button>
               <button
-                onClick={() => scrollToSection('awards')}
-                className="text-left hover:text-yellow-400 transition-colors text-gray-200 focus:outline-none font-jetbrains"
+                onClick={() => scrollToSection('education')}
+                className="text-left hover:text-red-500 transition-colors text-gray-300 focus:outline-none font-mono"
               >
-                Awards
+                About
               </button>
               <button
                 onClick={() => scrollToSection('skills')}
-                className="text-left hover:text-yellow-400 transition-colors text-gray-200 focus:outline-none font-jetbrains"
+                className="text-left hover:text-red-500 transition-colors text-gray-300 focus:outline-none font-mono"
               >
                 Skills
               </button>
               <button
                 onClick={() => scrollToSection('projects')}
-                className="text-left hover:text-yellow-400 transition-colors text-gray-200 focus:outline-none font-jetbrains"
+                className="text-left hover:text-red-500 transition-colors text-gray-300 focus:outline-none font-mono"
               >
                 Projects
               </button>
               <button
+                onClick={() => scrollToSection('awards')}
+                className="text-left hover:text-red-500 transition-colors text-gray-300 focus:outline-none font-mono"
+              >
+                Experience
+              </button>
+              <button
                 onClick={() => scrollToSection('contact')}
-                className="text-left hover:text-yellow-400 transition-colors text-gray-200 focus:outline-none font-jetbrains"
+                className="text-left hover:text-red-500 transition-colors text-gray-300 focus:outline-none font-mono"
               >
                 Contact
               </button>
+              <a
+                href="/Zakaria_Al-Alie_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-left hover:text-red-500 transition-colors text-gray-300 focus:outline-none font-mono"
+              >
+                Resume
+              </a>
             </nav>
           </div>
         )}

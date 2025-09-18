@@ -7,7 +7,7 @@ const Projects: React.FC = () => {
   
   const projects = [
     {
-      title: "Brain Tumor Classifier",
+      title: "Tumor Classifier",
       period: "Aug. 2025",
       description: "Brain tumor classifier using PyTorch and ResNet-18 transfer learning on MRI images achieving 97.9% accuracy across 4 tumor types. Implemented end-to-end pipeline with data augmentation, learning rate scheduling, and early stopping.",
       highlights: [
@@ -44,20 +44,6 @@ const Projects: React.FC = () => {
       ],
       techStack: ["React", "Express.js", "Firebase", "scikit-learn", "Fuse.js", "React Router", "Random Forest"],
       github: "https://github.com/zak-510/BerkeleyBets"
-    },
-    {
-      title: "Candidate Recommendation Engine",
-      period: "Aug. 2025",
-      description: "Built an AI-powered resume screening tool that ranks candidates based on semantic similarity to job descriptions using NLP and sentence embeddings. Developed an interactive Streamlit web app that supports batch resume uploads, real-time candidate scoring, and AI-generated summaries.",
-      highlights: [
-        "Uses cosine similarity calculations via scikit-learn to get percentage match scores between candidate qualifications and job requirements",
-        "Leverages the 24B parameter Mistral Small 3.1 model through OpenRouter API to generate personalized 2-3 sentence explanations of why each candidate fits the role",
-        "Implemented PyMuPDF which extracts and processes text content from uploaded PDF resumes",
-        "Integrated Hugging Face and transformer-based models MiniLM for the semantic matching engine"
-      ],
-      techStack: ["Streamlit", "Hugging Face", "MiniLM", "Sentence Transformers", "scikit-learn", "PyMuPDF", "OpenRouter API", "Mistral AI"],
-      github: "https://github.com/zak-510/Candidate-Recommendation-Engine",
-      demo: "https://candidate-rec.streamlit.app/"
     }
   ];
 
@@ -77,77 +63,87 @@ const Projects: React.FC = () => {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            {projects.map((project, index) => (
-              <div
-                key={index}
-                className="group overflow-hidden rounded-xl glass hover:scale-[1.02] transition-all duration-300"
-              >
-                <div className="p-6">
-                  <div className="flex items-start justify-between mb-3">
-                    <h3 className="text-xl md:text-2xl font-jetbrains-medium text-white cursor-pointer hover:opacity-80 transition-opacity pr-4">
-                      {project.title}
-                    </h3>
-                    <div className="flex space-x-2 flex-shrink-0">
-                      {project.demo && (
+          <div className="space-y-6">
+            {projects.map((project, index) => {
+              return (
+                <div
+                  key={index}
+                  className="group relative pl-8 py-6 transition-all duration-300 hover:translate-x-2"
+                >
+                  {/* White accent line */}
+                  <div className="absolute left-0 top-0 bottom-0 w-1 rounded-full bg-white"></div>
+                  
+                  <div className="space-y-4">
+                    {/* Header with title and links */}
+                    <div className="flex items-start justify-between">
+                      <div className="flex-1">
+                        <h3 className="text-xl font-medium mb-1 text-white">
+                          {project.title}
+                        </h3>
+                        <p className="text-gray-400 text-sm mb-3">
+                          {project.period}
+                        </p>
+                      </div>
+                      <div className="flex space-x-2">
+                        {project.demo && (
+                          <a
+                            href={project.demo}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="p-2 rounded-lg transition-all hover:scale-110 text-gray-400 hover:text-white hover:bg-gray-800/50"
+                          >
+                            <ExternalLink size={16} />
+                          </a>
+                        )}
                         <a
-                          href={project.demo}
+                          href={project.github}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="px-2 py-1 rounded-full transition-all hover:scale-110 text-gray-200 hover:text-white hover:bg-gray-600 flex items-center space-x-1"
+                          className="p-2 rounded-lg transition-all hover:scale-110 text-gray-400 hover:text-white hover:bg-gray-800/50"
                         >
-                          <ExternalLink size={14} />
-                          <span className="text-xs font-jetbrains">Demo</span>
+                          <Github size={16} />
                         </a>
-                      )}
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="p-1.5 rounded-full transition-all hover:scale-110 text-gray-200 hover:text-white hover:bg-gray-600"
-                      >
-                        <Github size={16} />
-                      </a>
+                      </div>
                     </div>
-                  </div>
 
-                  <div className="flex items-center mb-3 text-sm text-gray-300 font-jetbrains">
-                    <Calendar size={14} className="mr-2" />
-                    <span>{project.period}</span>
-                  </div>
-
-                  <p className="text-base text-gray-200 mb-4 flex-grow leading-relaxed font-jetbrains">
-                    {project.description}
-                  </p>
-
-                  <div className="mb-4">
-                    <h4 className="text-base font-light text-white mb-2 font-mono">Key Highlights</h4>
-                    <ul className="space-y-1">
-                      {project.highlights.slice(0, 3).map((highlight, highlightIndex) => (
-                        <li key={highlightIndex} className="text-gray-200 flex items-start text-sm font-jetbrains">
-                          <TrendingUp size={14} className="text-blue-400 mr-2 mt-0.5 flex-shrink-0" />
-                          {highlight}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div>
-                    <h4 className="text-base font-jetbrains-medium text-white mb-2">Tech Stack</h4>
-                    <div className="flex flex-wrap gap-1">
-                      {project.techStack.map((tech, techIndex) => (
-                        <span
-                          key={techIndex}
-                          className="px-2 py-1 bg-gray-700 text-gray-200 rounded-full text-xs font-jetbrains hover:bg-gray-600 transition-colors"
-                        >
-                          {tech}
-                        </span>
-                      ))}
+                    {/* Description */}
+                    <div>
+                      <p className="text-gray-300 text-sm leading-relaxed mb-4">
+                        {project.description}
+                      </p>
+                      
+                      {/* Key highlights */}
+                      <div className="mb-4">
+                        <h4 className="text-sm font-medium text-gray-300 mb-2">Key Highlights</h4>
+                        <ul className="space-y-1">
+                          {project.highlights.map((highlight, highlightIndex) => (
+                            <li key={highlightIndex} className="text-xs text-gray-400 flex items-start">
+                              <span className="text-white mr-2 mt-1">•</span>
+                              {highlight}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      
+                      {/* Tech stack */}
+                      <div>
+                        <h4 className="text-sm font-medium text-gray-300 mb-2">Tech Stack</h4>
+                        <div className="flex flex-wrap gap-1">
+                          {project.techStack.map((tech, techIndex) => (
+                            <span
+                              key={techIndex}
+                              className="text-xs text-gray-500 bg-gray-800/20 px-2 py-1 rounded"
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>

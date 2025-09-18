@@ -30,20 +30,26 @@ function App() {
 
   return (
     <div className="min-h-screen relative">
-      {/* Shooting Stars Background */}
-      <div className="shooting-stars-bg">
-        {/* Twinkling stars layer */}
-        <div className="stars"></div>
-        
-        {/* Multiple shooting stars with different trajectories */}
-        <div className="shooting-star" style={{ width: '300px' }}></div>
-        <div className="shooting-star" style={{ width: '250px' }}></div>
-        <div className="shooting-star" style={{ width: '400px' }}></div>
-        <div className="shooting-star" style={{ width: '350px' }}></div>
-        <div className="shooting-star" style={{ width: '200px' }}></div>
-        <div className="shooting-star" style={{ width: '450px' }}></div>
-        <div className="shooting-star" style={{ width: '320px' }}></div>
-        <div className="shooting-star" style={{ width: '280px' }}></div>
+      {/* Starry Background with Particles */}
+      <div className="professional-bg">
+        <div className="stars-layer"></div>
+        <div className="stars-layer"></div>
+        <div className="stars-layer"></div>
+        {/* Floating Particles */}
+        {Array.from({ length: 50 }).map((_, i) => (
+          <div
+            key={i}
+            className="particle"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              width: `${Math.random() * 4 + 1}px`,
+              height: `${Math.random() * 4 + 1}px`,
+              animationDelay: `${Math.random() * 6}s`,
+              animationDuration: `${Math.random() * 4 + 4}s`,
+            }}
+          />
+        ))}
       </div>
       
       <Header 

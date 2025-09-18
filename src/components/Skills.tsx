@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Search, X, Code2, ChevronDown, ChevronUp } from 'lucide-react';
+import { Search, X } from 'lucide-react';
 
 const Skills: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -70,7 +70,7 @@ const Skills: React.FC = () => {
   })).filter(category => category.skills.length > 0);
 
   return (
-    <section id="skills" className="py-20 bg-transparent">
+    <section id="skills" className="py-12 bg-transparent">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
@@ -85,12 +85,12 @@ const Skills: React.FC = () => {
               {[...techLogos, ...techLogos].map((tech, index) => (
                 <div
                   key={index}
-                  className="tech-logo-container flex-shrink-0 w-16 h-16 rounded-lg bg-gray-800 flex items-center justify-center shadow-md transform hover:scale-110 transition-transform duration-300 p-2"
+                  className="tech-logo-container flex-shrink-0 w-20 h-20 flex items-center justify-center transform hover:scale-110 transition-transform duration-300 p-2"
                 >
                   <img
                     src={tech.logo}
                     alt={tech.name}
-                    className="w-10 h-10 object-contain relative z-10"
+                    className="w-14 h-14 object-contain relative z-10"
                     title={tech.name}
                   />
                 </div>
@@ -98,26 +98,36 @@ const Skills: React.FC = () => {
             </div>
           </div>
 
-          {/* View Tech Button */}
-          <div className="text-center mb-8">
-            <button
-              onClick={() => setShowSkills(!showSkills)}
-              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500 to-yellow-500 rounded-lg text-white font-jetbrains-medium hover:from-blue-600 hover:to-yellow-600 transition-all duration-300 transform hover:scale-105"
-            >
-              View All Technologies
-            </button>
-          </div>
         </div>
       </div>
 
       {/* Skills Overlay Modal */}
       {showSkills && (
-        <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-6">
-          <div className="glass rounded-xl max-w-5xl w-full max-h-[80vh] overflow-y-auto relative animate-fade-in">
+        <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 p-6">
+          {/* Starry background for modal */}
+          <div className="fixed inset-0 pointer-events-none">
+            <div className="stars-layer opacity-30"></div>
+            <div className="stars-layer opacity-20"></div>
+            {Array.from({ length: 20 }).map((_, i) => (
+              <div
+                key={i}
+                className="particle opacity-60"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                  width: `${Math.random() * 3 + 1}px`,
+                  height: `${Math.random() * 3 + 1}px`,
+                  animationDelay: `${Math.random() * 6}s`,
+                  animationDuration: `${Math.random() * 4 + 4}s`,
+                }}
+              />
+            ))}
+          </div>
+          <div className="bg-black/40 backdrop-blur-md border border-white/10 rounded-xl max-w-5xl w-full max-h-[80vh] overflow-y-auto relative animate-fade-in">
             {/* Close Button */}
             <button
               onClick={() => setShowSkills(false)}
-              className="absolute top-4 right-4 z-10 p-2 bg-gray-800 hover:bg-gray-700 rounded-lg text-white transition-colors"
+              className="absolute top-4 right-4 z-10 p-2 border-2 border-red-500 text-white hover:bg-red-500 hover:text-white rounded-lg transition-all duration-300"
             >
               <X size={24} />
             </button>

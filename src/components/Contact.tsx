@@ -25,14 +25,14 @@ const Contact: React.FC = () => {
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-mono text-white mb-4 cursor-pointer hover:opacity-80 transition-opacity">
               Get in Touch
             </h2>
-            <p className="text-lg text-gray-200 mb-8 flex-grow leading-relaxed max-w-2xl mx-auto font-jetbrains">
+            <p className="text-gray-300 text-lg md:text-xl leading-relaxed font-light text-center mb-8 max-w-4xl mx-auto">
               I'm currently open to new opportunities and collaborations. Whether you have a project in mind, a question, or just want to say hi, my inbox is always open.
             </p>
             
             {/* Say Hello Button */}
             <button
               onClick={handleEmailClick}
-              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-500 to-yellow-500 rounded-lg text-lg font-jetbrains-medium text-white hover:from-blue-600 hover:to-yellow-600 transition-all duration-300 transform hover:scale-105 shadow-lg mb-3"
+              className="inline-flex items-center px-8 py-4 border-2 border-red-500 text-white hover:bg-red-500 hover:text-white rounded-lg text-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-lg mb-3"
             >
               Say Hello
             </button>
