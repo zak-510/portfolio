@@ -38,7 +38,7 @@ const Hero: React.FC = () => {
           setCurrentPhraseIndex((prev) => (prev + 1) % phrases.length);
         }
       }
-    }, isDeleting ? 75 : 150);
+    }, isDeleting ? 50 : 100);
 
     return () => clearInterval(timer);
   }, [currentPhraseIndex]);
