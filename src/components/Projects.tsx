@@ -9,7 +9,7 @@ const Projects: React.FC = () => {
     {
       title: "Tumor Classifier",
       period: "Aug. 2025",
-      description: "Brain tumor classifier using PyTorch and ResNet-18 transfer learning on MRI images achieving 97.9% accuracy across 4 tumor types. Implemented end-to-end pipeline with data augmentation, learning rate scheduling, and early stopping.",
+      description: "Brain tumor classifier using PyTorch and ResNet-18 transfer learning on MRI images achieving 97.9% accuracy across 4 tumor types. Implemented data augmentation, learning rate scheduling, and early stopping.",
       highlights: [
         "Evaluation system with separate test sets and performance breakdowns per tumor type",
         "F1-scores: 96.5%-99.4% across all categories (glioma, meningioma, pituitary, healthy)",
@@ -22,7 +22,7 @@ const Projects: React.FC = () => {
     {
       title: "xView2 Building Damage Assessment",
       period: "Jul. 2025",
-      description: "Automated building damage assessment from Maxar satellite imagery using PyTorch, processing 850K+ buildings across 15 countries and 6 disaster types. Created a two-stage deep learning architecture achieving 84.4% weighted F1 with strong performance on critical categories.",
+      description: "Automated building damage assessment from Maxar satellite imagery using PyTorch, processing 850K+ buildings across 15 countries and 6 disaster types",
       highlights: [
         "U-Net building localization and CNN damage classifier",
         "84.4% weighted F1 score (92% F1 undamaged, 72% F1 destroyed)",
@@ -35,7 +35,7 @@ const Projects: React.FC = () => {
     {
       title: "BerkeleyBets, CalHacks Hackathon",
       period: "Jun. 2025",
-      description: "Full-stack sports analytics platform serving 150+ athletes across NBA, NFL, and MLB. Built with React (8 components, 4 pages) and Express.js REST API, processing extensive player data with advanced machine learning models.",
+      description: "Full-stack sports analytics platform serving 150+ athletes across NBA, NFL, and MLB. Built with React (8 components, 4 pages) and Express.js REST API",
       highlights: [
         "Processed 15,000+ samples from 1,419 player-seasons (2023–2024) using position-specific Random Forest models",
         "Implemented temporal validation techniques to prevent overfitting in predictive models",
