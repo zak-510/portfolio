@@ -22,7 +22,7 @@ const Projects: React.FC = () => {
     {
       title: "xView2 Building Damage Assessment",
       period: "Jul. 2025",
-      description: "Automated building damage assessment from Maxar satellite imagery using PyTorch, processing 850K+ buildings across 15 countries and 6 disaster types",
+      description: "Automated building damage assessment from Maxar satellite imagery using PyTorch, processing 850K+ buildings across 15 countries and 6 disaster types.",
       highlights: [
         "U-Net building localization and CNN damage classifier",
         "84.4% weighted F1 score (92% F1 undamaged, 72% F1 destroyed)",
@@ -35,7 +35,7 @@ const Projects: React.FC = () => {
     {
       title: "BerkeleyBets, CalHacks Hackathon",
       period: "Jun. 2025",
-      description: "Full-stack sports analytics platform serving 150+ athletes across NBA, NFL, and MLB. Built with React (8 components, 4 pages) and Express.js REST API",
+      description: "Full-stack sports analytics platform serving 150+ athletes across NBA, NFL, and MLB. Built with React (8 components, 4 pages) and Express.js REST API.",
       highlights: [
         "Processed 15,000+ samples from 1,419 player-seasons (2023–2024) using position-specific Random Forest models",
         "Implemented temporal validation techniques to prevent overfitting in predictive models",
