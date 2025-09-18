@@ -52,7 +52,13 @@ const Header: React.FC<HeaderProps> = ({ mobileMenuOpen, setMobileMenuOpen }) =>
               onClick={() => scrollToSection('education')}
               className="hover:text-red-500 transition-colors font-mono text-gray-300 focus:outline-none"
             >
-              About
+              Education
+            </button>
+            <button
+              onClick={() => scrollToSection('awards')}
+              className="hover:text-red-500 transition-colors font-mono text-gray-300 focus:outline-none"
+            >
+              Awards
             </button>
             <button
               onClick={() => scrollToSection('skills')}
@@ -65,12 +71,6 @@ const Header: React.FC<HeaderProps> = ({ mobileMenuOpen, setMobileMenuOpen }) =>
               className="hover:text-red-500 transition-colors font-mono text-gray-300 focus:outline-none"
             >
               Projects
-            </button>
-            <button
-              onClick={() => scrollToSection('awards')}
-              className="hover:text-red-500 transition-colors font-mono text-gray-300 focus:outline-none"
-            >
-              Experience
             </button>
             <button
               onClick={() => scrollToSection('contact')}
@@ -120,7 +120,13 @@ const Header: React.FC<HeaderProps> = ({ mobileMenuOpen, setMobileMenuOpen }) =>
                 onClick={() => scrollToSection('education')}
                 className="text-left hover:text-red-500 transition-colors text-gray-300 focus:outline-none font-mono"
               >
-                About
+                Education
+              </button>
+              <button
+                onClick={() => scrollToSection('awards')}
+                className="text-left hover:text-red-500 transition-colors text-gray-300 focus:outline-none font-mono"
+              >
+                Awards
               </button>
               <button
                 onClick={() => scrollToSection('skills')}
@@ -133,12 +139,6 @@ const Header: React.FC<HeaderProps> = ({ mobileMenuOpen, setMobileMenuOpen }) =>
                 className="text-left hover:text-red-500 transition-colors text-gray-300 focus:outline-none font-mono"
               >
                 Projects
-              </button>
-              <button
-                onClick={() => scrollToSection('awards')}
-                className="text-left hover:text-red-500 transition-colors text-gray-300 focus:outline-none font-mono"
-              >
-                Experience
               </button>
               <button
                 onClick={() => scrollToSection('contact')}
