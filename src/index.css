@@ -467,7 +467,7 @@ a:focus {
 }
 
 .animate-scroll-fast {
-  animation: scroll-fast 12s linear infinite;
+  animation: scroll-fast 8s linear infinite;
   will-change: transform;
 }
 

@@ -108,8 +108,8 @@ const Header: React.FC<HeaderProps> = ({ mobileMenuOpen, setMobileMenuOpen }) =>
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden mt-4 py-4 lg:mt-6 lg:py-6 border-t border-gray-700 transition-all duration-300 bg-black/80 backdrop-blur-lg rounded-lg">
-            <nav className="flex flex-col space-y-4">
+          <div className="md:hidden mt-4 py-6 border-t border-red-500/20 transition-all duration-300 bg-transparent backdrop-blur-sm">
+            <nav className="flex flex-col space-y-6">
               <button
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                 className="text-left hover:text-red-500 transition-colors text-gray-300 focus:outline-none font-mono"
