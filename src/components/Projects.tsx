@@ -17,7 +17,7 @@ const Projects: React.FC = () => {
         "Learning rate scheduling and early stopping for optimal training convergence"
       ],
       techStack: ["PyTorch", "ResNet-18", "Transfer Learning", "Medical Imaging", "Data Augmentation", "Early Stopping", "Learning Rate Scheduling"],
-      github: "https://github.com/zak-510/brain-tumor-classifier"
+      github: "https://github.com/zak-510/bt-mri"
     },
     {
       title: "xView2 Building Damage Assessment",
