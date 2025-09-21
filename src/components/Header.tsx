@@ -86,7 +86,7 @@ const Header: React.FC<HeaderProps> = ({ mobileMenuOpen, setMobileMenuOpen }) =>
               href="/Zakaria_Al-Alie_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden md:block px-4 py-2 border-2 border-red-500 text-white hover:bg-red-500 hover:text-white rounded-lg transition-all duration-300 font-medium text-sm"
+              className="hidden md:block px-4 py-2 border-2 border-red-500 text-white hover:bg-white/10 hover:text-white rounded-lg transition-all duration-300 font-medium text-sm"
             >
               Resume
             </a>

@@ -32,7 +32,7 @@ const Contact: React.FC = () => {
             {/* Say Hello Button */}
             <button
               onClick={handleEmailClick}
-              className="inline-flex items-center px-8 py-4 border-2 border-red-500 text-white hover:bg-red-500 hover:text-white rounded-lg text-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-lg mb-3"
+              className="inline-flex items-center px-8 py-4 border-2 border-red-500 text-white hover:bg-white/10 hover:text-white rounded-lg text-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-lg mb-3"
             >
               Say Hello
             </button>

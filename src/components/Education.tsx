@@ -74,10 +74,10 @@ const Education: React.FC = () => {
                     </div>
                     <div className="flex-1">
                       <h3 className="text-xl font-medium mb-1 text-white">
-                        {edu.degree}
+                        {edu.school}
                       </h3>
                       <p className="text-gray-300 font-medium text-lg">
-                        {edu.school}
+                        {edu.degree}
                       </p>
                     </div>
                   </div>
