@@ -54,7 +54,7 @@ const Awards = () => {
                         <img 
                           src={award.logo} 
                           alt={`${award.title} logo`}
-                          className="w-8 h-8 object-contain"
+                          className="w-16 h-16 object-contain"
                         />
                       </div>
                       <div className="flex-1">
@@ -77,7 +77,7 @@ const Awards = () => {
                   </div>
 
                   {/* Description */}
-                  <div className="ml-12">
+                  <div className="ml-20">
                     <p className="text-gray-300 text-sm leading-relaxed">
                       {award.description}
                     </p>

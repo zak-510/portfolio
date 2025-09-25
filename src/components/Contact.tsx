@@ -29,12 +29,13 @@ const Contact: React.FC = () => {
               I'm currently open to new opportunities and collaborations. Whether you have a project in mind, a question, or just want to say hi, my inbox is always open.
             </p>
             
-            {/* Say Hello Button */}
+            {/* Say Hello Link */}
             <button
               onClick={handleEmailClick}
-              className="inline-flex items-center px-8 py-4 border-2 border-red-500 text-white hover:bg-white/10 hover:text-white rounded-lg text-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-lg mb-3"
+              className="text-xs sm:text-sm text-gray-400 hover:text-white transition-colors duration-300 font-light touch-manipulation"
+              style={{ fontFamily: 'Roboto Mono, monospace' }}
             >
-              Say Hello
+              Say Hello →
             </button>
           </div>
 

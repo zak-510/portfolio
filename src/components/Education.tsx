@@ -69,7 +69,7 @@ const Education: React.FC = () => {
                       <img 
                         src={edu.logo} 
                         alt={`${edu.school} logo`}
-                        className="w-8 h-8 object-contain"
+                        className="w-16 h-16 object-contain"
                       />
                     </div>
                     <div className="flex-1">
@@ -83,14 +83,14 @@ const Education: React.FC = () => {
                   </div>
 
                   {/* Period */}
-                  <div className="ml-12">
+                  <div className="ml-20">
                     <p className="text-gray-400 text-sm mb-4">
                       {edu.period}
                     </p>
                   </div>
 
                   {/* Coursework */}
-                  <div className="ml-12">
+                  <div className="ml-20">
                     <h4 className="text-sm font-medium text-gray-300 mb-3">
                       {edu.isPlanned ? 'Planned Relevant Coursework' : 'Relevant Coursework'}
                     </h4>
