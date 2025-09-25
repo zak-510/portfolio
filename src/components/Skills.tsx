@@ -127,7 +127,7 @@ const Skills: React.FC = () => {
             {/* Close Button */}
             <button
               onClick={() => setShowSkills(false)}
-              className="absolute top-4 right-4 z-10 p-2 border-2 border-red-500 text-white hover:bg-red-500 hover:text-white rounded-lg transition-all duration-300"
+              className="absolute top-4 right-4 z-10 p-2 border-2 border-white text-white hover:bg-white hover:text-black rounded-lg transition-all duration-300"
             >
               <X size={24} />
             </button>
