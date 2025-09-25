@@ -164,6 +164,10 @@ a:not([class])[href] {
     border: var(--borderSoft);
 }
 
+.smooth-scroll-animate {
+  transition: opacity 2s ease-out, transform 2s ease-out;
+}
+
 /* Hero name styling with viewport units */
 .hero-name {
   font-family: 'Space Grotesk', sans-serif;

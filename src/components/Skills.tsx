@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Search, X } from 'lucide-react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const Skills: React.FC = () => {
+  const { elementRef, isVisible } = useScrollAnimation();
   const [searchTerm, setSearchTerm] = useState('');
   const [showSkills, setShowSkills] = useState(false);
 
@@ -70,7 +72,13 @@ const Skills: React.FC = () => {
   })).filter(category => category.skills.length > 0);
 
   return (
-    <section id="skills" className="page py-12 bg-transparent">
+    <section 
+      id="skills" 
+      ref={elementRef}
+      className={`page py-12 bg-transparent smooth-scroll-animate ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+      }`}
+    >
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
