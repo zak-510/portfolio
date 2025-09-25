@@ -435,14 +435,14 @@ a:not([class])[href] {
 #social-fixed {
   position: fixed;
   top: 0;
-  left: 16px;
+  left: 20px;
   bottom: 0;
   width: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
   z-index: 1000;
 }
 
@@ -486,7 +486,7 @@ a:not([class])[href] {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 16px;
+    gap: 12px;
     background: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
