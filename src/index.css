@@ -476,7 +476,32 @@ a:not([class])[href] {
 
 @media (max-width: 768px) {
   #social-fixed {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: auto;
+    width: auto;
+    height: auto;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 12px 20px;
+    z-index: 1000;
+  }
+  
+  #social-fixed::after {
     display: none;
+  }
+  
+  #social-fixed .icon {
+    width: 28px;
+    height: 28px;
   }
 }
 
