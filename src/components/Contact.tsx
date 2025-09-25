@@ -15,7 +15,7 @@ const Contact: React.FC = () => {
     <section 
       id="contact" 
       ref={elementRef}
-      className={`py-20 bg-transparent smooth-scroll-animate ${
+      className={`page bg-transparent py-20 smooth-scroll-animate ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
       }`}
     >

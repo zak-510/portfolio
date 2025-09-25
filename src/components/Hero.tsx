@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 const Hero: React.FC = () => {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
   const [typewriterText, setTypewriterText] = useState('');
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
   const phrases = [
@@ -10,82 +9,6 @@ const Hero: React.FC = () => {
     "Regents' and Chancellor's Scholar"
   ]
   
-  // Particle animation
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-
-    const particles: Array<{
-      x: number;
-      y: number;
-      vx: number;
-      vy: number;
-      size: number;
-      opacity: number;
-    }> = [];
-
-    const resizeCanvas = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
-
-    const createParticle = () => ({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      vx: (Math.random() - 0.5) * 0.5,
-      vy: (Math.random() - 0.5) * 0.5,
-      size: Math.random() * 2 + 1,
-      opacity: Math.random() * 0.5 + 0.2,
-    });
-
-    const initParticles = () => {
-      particles.length = 0;
-      for (let i = 0; i < 80; i++) {
-        particles.push(createParticle());
-      }
-    };
-
-    const animate = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      particles.forEach((particle) => {
-        // Update position
-        particle.x += particle.vx;
-        particle.y += particle.vy;
-
-        // Wrap around screen
-        if (particle.x < 0) particle.x = canvas.width;
-        if (particle.x > canvas.width) particle.x = 0;
-        if (particle.y < 0) particle.y = canvas.height;
-        if (particle.y > canvas.height) particle.y = 0;
-
-        // Draw particle
-        ctx.fillStyle = `rgba(245, 245, 245, ${particle.opacity})`;
-        ctx.beginPath();
-        ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-        ctx.fill();
-      });
-
-      requestAnimationFrame(animate);
-    };
-
-    resizeCanvas();
-    initParticles();
-    animate();
-
-    window.addEventListener('resize', () => {
-      resizeCanvas();
-      initParticles();
-    });
-
-    return () => {
-      window.removeEventListener('resize', resizeCanvas);
-    };
-  }, []);
-
   // Typewriter effect
   useEffect(() => {
     let index = 0;
@@ -122,12 +45,6 @@ const Hero: React.FC = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-transparent page">
-      {/* Canvas for particles */}
-      <canvas 
-        ref={canvasRef}
-        className="absolute inset-0 w-full h-full"
-        style={{ zIndex: -1, pointerEvents: 'none' }}
-      />
       
       <div className="container mx-auto px-4 hero-container relative z-10">
         <div className="max-w-5xl mx-auto">

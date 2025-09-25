@@ -1,9 +1,9 @@
+/* Font Faces - using web fonts as fallback */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* Font Faces - using web fonts as fallback */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap');
 
 /* CSS Variables */
 html {
@@ -458,8 +458,8 @@ a:not([class])[href] {
 }
 
 #social-fixed .icon {
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
   color: var(--textAlt);
   transition: all 0.2s ease;
   cursor: pointer;
@@ -500,8 +500,8 @@ a:not([class])[href] {
   }
   
   #social-fixed .icon {
-    width: 28px;
-    height: 28px;
+    width: 36px;
+    height: 36px;
   }
 }
 

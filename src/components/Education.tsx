@@ -41,11 +41,11 @@ const Education: React.FC = () => {
     <section 
       id="education" 
       ref={elementRef}
-      className={`py-20 bg-transparent smooth-scroll-animate ${
+      className={`page bg-transparent py-20 px-4 sm:px-6 lg:px-8 smooth-scroll-animate ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
       }`}
     >
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-mono text-white mb-4 cursor-pointer hover:opacity-80 transition-opacity">

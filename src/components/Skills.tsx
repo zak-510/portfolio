@@ -70,7 +70,7 @@ const Skills: React.FC = () => {
   })).filter(category => category.skills.length > 0);
 
   return (
-    <section id="skills" className="py-12 bg-transparent">
+    <section id="skills" className="page py-12 bg-transparent">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
