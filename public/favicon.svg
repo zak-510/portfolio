@@ -16,10 +16,10 @@
   
   <!-- Gradient definitions -->
   <defs>
-    <linearGradient id="redGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#ef4444;stop-opacity:1" />
-      <stop offset="50%" style="stop-color:#f87171;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#dc2626;stop-opacity:1" />
+    <linearGradient id="whiteGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#f5f5f5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e5e5e5;stop-opacity:1" />
     </linearGradient>
     <filter id="glow">
       <feGaussianBlur stdDeviation="1" result="coloredBlur"/>
@@ -30,12 +30,12 @@
     </filter>
   </defs>
   
-  <!-- ZA text with enhanced red gradient and glow -->
+  <!-- ZA text with enhanced white gradient and glow -->
   <text x="16" y="22" 
         font-family="system-ui, -apple-system, sans-serif" 
         font-size="15" 
         font-weight="900" 
         text-anchor="middle" 
-        fill="url(#redGradient)"
+        fill="url(#whiteGradient)"
         filter="url(#glow)">ZA</text>
 </svg>
