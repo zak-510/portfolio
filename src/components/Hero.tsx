@@ -50,29 +50,28 @@ const Hero: React.FC = () => {
         <div className="max-w-5xl mx-auto">
           <div className="relative flex flex-col items-center">
             {/* Name - Centered with viewport-based sizing */}
-            <div className="relative mb-2 w-full flex flex-col items-center">
+            <div className="relative mb-2 flex flex-col items-center">
               {/* Greeting - Positioned above and aligned with the Z */}
-              <div className="sm:absolute sm:-top-6 sm:left-1">
+              <div className="sm:absolute sm:-top-8" style={{ left: '4px' }}>
                 <p className="text-sm sm:text-lg text-gray-300 font-light" style={{ fontFamily: 'Roboto Mono, monospace' }}>
                   Hi, I'm
                 </p>
               </div>
 
-              <h1 className="hero-name text-white font-mono text-center">
+              <h1 className="hero-name text-white font-mono text-center sm:text-left">
                 Zakaria Al-Alie
               </h1>
 
               {/* Typewriter & Resume Link Container */}
-              <div className="mt-4 sm:mt-0 sm:absolute sm:-bottom-12 sm:right-0 text-center sm:text-right">
+              <div className="mt-4 sm:mt-0 sm:absolute sm:-bottom-16 w-full text-center sm:text-right">
                 <p className="text-sm sm:text-lg md:text-xl text-gray-300 font-light" style={{ fontFamily: 'Roboto Mono, monospace' }}>
                   {typewriterText}<span className="animate-pulse text-white">|</span>
                 </p>
-                <div className="h-2"></div>
                 <a 
                   href="/Zakaria_Al-Alie_Resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs sm:text-sm text-gray-400 hover:text-white transition-colors duration-300 font-light inline-block mt-4 sm:mt-2"
+                  className="text-xs sm:text-sm text-gray-400 hover:text-white transition-colors duration-300 font-light inline-block mt-2"
                   style={{ fontFamily: 'Roboto Mono, monospace' }}
                 >
                   View Resume →
