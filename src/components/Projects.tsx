@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Calendar, TrendingUp, ExternalLink } from 'lucide-react';
+import { Github } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const Projects: React.FC = () => {
@@ -16,7 +16,7 @@ const Projects: React.FC = () => {
         "Data augmentation pipeline: rotation, flipping, brightness adjustments for robustness",
         "Learning rate scheduling and early stopping for optimal training convergence"
       ],
-      techStack: ["PyTorch", "ResNet-18", "Transfer Learning", "Medical Imaging", "Data Augmentation", "Early Stopping", "Learning Rate Scheduling"],
+      techStack: ["PyTorch", "ResNet-18", "scikit-learn", "NumPy", "OpenCV", "Matplotlib"],
       github: "https://github.com/zak-510/bt-mri"
     },
     {
@@ -56,89 +56,51 @@ const Projects: React.FC = () => {
       }`}
     >
       <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-mono text-white mb-4 cursor-pointer hover:opacity-80 transition-opacity">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-left mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-mono text-white mb-4 cursor-default">
               Featured Projects
             </h2>
           </div>
 
-          <div className="space-y-6">
+          <div className="space-y-12">
             {projects.map((project, index) => {
               return (
-                <div
-                  key={index}
-                  className="group relative pl-8 py-6 transition-all duration-300 hover:translate-x-2"
-                >
-                  {/* White accent line */}
-                  <div className="absolute left-0 top-0 bottom-0 w-1 rounded-full bg-white"></div>
-                  
-                  <div className="space-y-4">
-                    {/* Header with title and links */}
-                    <div className="flex items-start justify-between">
-                      <div className="flex-1">
-                        <h3 className="text-xl font-medium mb-1 text-white">
-                          {project.title}
-                        </h3>
-                        <p className="text-gray-400 text-sm mb-3">
-                          {project.period}
-                        </p>
-                      </div>
-                      <div className="flex space-x-2">
-                        {project.demo && (
-                          <a
-                            href={project.demo}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="p-2 rounded-lg transition-all hover:scale-110 text-gray-400 hover:text-white hover:bg-gray-800/50"
-                          >
-                            <ExternalLink size={16} />
-                          </a>
-                        )}
-                        <a
-                          href={project.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="p-2 rounded-lg transition-all hover:scale-110 text-gray-400 hover:text-white hover:bg-gray-800/50"
-                        >
-                          <Github size={16} />
-                        </a>
-                      </div>
-                    </div>
+                <div key={index} className="grid md:grid-cols-4 gap-x-6">
+                  {/* Period */}
+                  <div className="md:col-span-1 mb-4 md:mb-0">
+                    <p className="text-sm text-gray-400 font-mono">{project.period}</p>
+                  </div>
 
-                    {/* Description */}
-                    <div>
-                      <p className="text-gray-300 text-sm leading-relaxed mb-4">
-                        {project.description}
-                      </p>
-                      
-                      {/* Key highlights */}
-                      <div className="mb-4">
-                        <h4 className="text-sm font-medium text-gray-300 mb-2">Key Highlights</h4>
-                        <ul className="space-y-1">
-                          {project.highlights.map((highlight, highlightIndex) => (
-                            <li key={highlightIndex} className="text-xs text-gray-400 flex items-start">
-                              <span className="text-white mr-2 mt-1">•</span>
-                              {highlight}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                      
-                      {/* Tech stack */}
-                      <div>
-                        <h4 className="text-sm font-medium text-gray-300 mb-2">Tech Stack</h4>
-                        <div className="flex flex-wrap gap-1">
-                          {project.techStack.map((tech, techIndex) => (
-                            <span
-                              key={techIndex}
-                              className="text-xs text-gray-500 bg-gray-800/20 px-2 py-1 rounded"
-                            >
-                              {tech}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
+                  {/* Details */}
+                  <div className="md:col-span-3">
+                    <div className="flex justify-between items-start mb-2">
+                      <h3 className="text-xl font-medium text-white">
+                        {project.title}
+                      </h3>
+                      <a 
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-gray-400 hover:text-white transition-colors flex-shrink-0"
+                      >
+                        <Github size={18} />
+                      </a>
+                    </div>
+                    
+                    <p className="text-gray-300 text-sm leading-relaxed font-light mb-4">
+                      {project.description}
+                    </p>
+
+                    <div className="flex flex-wrap gap-2">
+                      {project.techStack.map((tech, techIndex) => (
+                        <span
+                          key={techIndex}
+                          className="text-xs text-gray-400 border border-white/20 bg-white/5 px-2 py-1 rounded-full"
+                        >
+                          {tech}
+                        </span>
+                      ))}
                     </div>
                   </div>
                 </div>

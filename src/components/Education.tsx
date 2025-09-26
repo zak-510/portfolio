@@ -47,58 +47,51 @@ const Education: React.FC = () => {
     >
       <div className="container mx-auto">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-mono text-white mb-4 cursor-pointer hover:opacity-80 transition-opacity">
+          <div className="text-left mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-mono text-white mb-4 cursor-default">
               Education
             </h2>
           </div>
 
-          <div className="space-y-6">
+          <div className="space-y-12">
             {education.map((edu, index) => (
-              <div
-                key={index}
-                className="group relative pl-8 py-6 transition-all duration-300 hover:translate-x-2"
-              >
-                {/* White accent line */}
-                <div className="absolute left-0 top-0 bottom-0 w-1 rounded-full bg-white"></div>
+              <div key={index} className="grid md:grid-cols-4 gap-x-6">
+                {/* Period */}
+                <div className="md:col-span-1 mb-4 md:mb-0">
+                  <p className="text-sm text-gray-400 font-mono whitespace-nowrap">{edu.period}</p>
+                </div>
                 
-                <div className="space-y-4">
-                  {/* Header with logo and title */}
-                  <div className="flex items-start space-x-4">
-                    <div className="flex-shrink-0 mt-1">
-                      <img 
+                {/* Details */}
+                <div className="md:col-span-3">
+                  {/* School and Degree */}
+                  <div className="flex items-start space-x-4 mb-4">
+                    <div className="flex-shrink-0 pt-1">
+                       <img 
                         src={edu.logo} 
                         alt={`${edu.school} logo`}
-                        className="w-16 h-16 object-contain"
+                        className="w-8 h-8 object-contain"
                       />
                     </div>
-                    <div className="flex-1">
-                      <h3 className="text-xl font-medium mb-1 text-white">
+                    <div>
+                      <h3 className="text-xl font-medium text-white">
                         {edu.school}
                       </h3>
-                      <p className="text-gray-300 font-medium text-lg">
+                      <p className="text-gray-300 font-light text-lg">
                         {edu.degree}
                       </p>
                     </div>
                   </div>
-
-                  {/* Period */}
-                  <div className="ml-20">
-                    <p className="text-gray-400 text-sm mb-4">
-                      {edu.period}
-                    </p>
-                  </div>
-
+                  
                   {/* Coursework */}
-                  <div className="ml-20">
-                    <h4 className="text-sm font-medium text-gray-300 mb-3">
-                      {edu.isPlanned ? 'Planned Relevant Coursework' : 'Relevant Coursework'}
+                  <div>
+                    <h4 className="text-sm font-medium text-gray-300 mb-3 font-mono">
+                      {edu.isPlanned ? 'Planned Coursework' : 'Relevant Coursework'}
                     </h4>
                     <div className="flex flex-wrap gap-2">
                       {edu.courses.map((course, courseIndex) => (
                         <span
                           key={courseIndex}
-                          className="text-xs text-gray-400 bg-gray-800/30 px-2 py-1 rounded"
+                          className="text-xs text-gray-400 border border-white/20 bg-white/5 px-2 py-1 rounded-full"
                         >
                           {course}
                         </span>

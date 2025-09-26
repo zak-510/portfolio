@@ -1,4 +1,3 @@
-import { ExternalLink } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const Awards = () => {
@@ -31,57 +30,49 @@ const Awards = () => {
     >
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-mono text-white mb-4 cursor-pointer hover:opacity-80 transition-opacity">
+          <div className="text-left mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-mono text-white mb-4 cursor-default">
               Awards & Honors
             </h2>
           </div>
           
-          <div className="space-y-6">
+          <div className="space-y-12">
             {awards.map((award, index) => (
-              <div
-                key={index}
-                className="group relative pl-8 py-6 transition-all duration-300 hover:translate-x-2"
-              >
-                {/* White accent line */}
-                <div className="absolute left-0 top-0 bottom-0 w-1 rounded-full bg-white"></div>
-                
-                <div className="space-y-4">
-                  {/* Header with logo and title */}
-                  <div className="flex items-start justify-between">
-                    <div className="flex items-start space-x-4">
-                      <div className="flex-shrink-0 mt-1">
-                        <img 
-                          src={award.logo} 
-                          alt={`${award.title} logo`}
-                          className="w-16 h-16 object-contain"
-                        />
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="text-xl font-medium mb-1 text-white">
-                          {award.title}
-                        </h3>
-                        <p className="text-gray-400 text-sm mb-3">
-                          {award.date}
-                        </p>
-                      </div>
+              <div key={index} className="grid md:grid-cols-4 gap-x-6">
+                {/* Date */}
+                <div className="md:col-span-1 mb-4 md:mb-0">
+                  <p className="text-sm text-gray-400 font-mono">{award.date}</p>
+                </div>
+
+                {/* Details */}
+                <div className="md:col-span-3">
+                  <div className="flex items-start space-x-4 mb-3">
+                    <div className="flex-shrink-0 pt-1">
+                      <img 
+                        src={award.logo} 
+                        alt={`${award.title} logo`}
+                        className="w-8 h-8 object-contain"
+                      />
                     </div>
-                    <a
-                      href={award.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-2 rounded-lg transition-all hover:scale-110 text-gray-400 hover:text-white hover:bg-gray-800/50"
-                    >
-                      <ExternalLink size={16} />
-                    </a>
+                    <div>
+                      <h3 className="text-xl font-medium text-white">
+                        {award.title}
+                      </h3>
+                    </div>
                   </div>
 
-                  {/* Description */}
-                  <div className="ml-20">
-                    <p className="text-gray-300 text-sm leading-relaxed">
-                      {award.description}
-                    </p>
-                  </div>
+                  <p className="text-gray-300 text-sm leading-relaxed font-light mb-3">
+                    {award.description}
+                  </p>
+
+                  <a 
+                    href={award.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs text-gray-400 hover:text-white transition-colors duration-300 font-mono group"
+                  >
+                    Learn More <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
+                  </a>
                 </div>
               </div>
             ))}
