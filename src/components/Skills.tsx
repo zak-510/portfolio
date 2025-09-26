@@ -93,12 +93,12 @@ const Skills: React.FC = () => {
               {[...techLogos, ...techLogos].map((tech, index) => (
                 <div
                   key={index}
-                  className="tech-logo-container flex-shrink-0 w-20 h-20 flex items-center justify-center transform hover:scale-110 transition-transform duration-300 p-2"
+                  className="tech-logo-container flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center transform hover:scale-110 transition-transform duration-300 p-2"
                 >
                   <img
                     src={tech.logo}
                     alt={tech.name}
-                    className="w-14 h-14 object-contain relative z-10"
+                    className="w-12 h-12 sm:w-14 sm:h-14 object-contain relative z-10"
                     title={tech.name}
                   />
                 </div>

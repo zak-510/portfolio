@@ -50,32 +50,29 @@ const Hero: React.FC = () => {
         <div className="max-w-5xl mx-auto">
           <div className="relative flex flex-col items-center">
             {/* Name - Centered with viewport-based sizing */}
-            <div className="relative mb-2">
+            <div className="relative mb-2 w-full flex flex-col items-center">
               {/* Greeting - Positioned above and aligned with the Z */}
-              <div className="absolute -top-6 sm:-top-8" style={{ left: '4px' }}>
+              <div className="sm:absolute sm:-top-6 sm:left-1">
                 <p className="text-sm sm:text-lg text-gray-300 font-light" style={{ fontFamily: 'Roboto Mono, monospace' }}>
                   Hi, I'm
                 </p>
               </div>
 
-              <h1 className="hero-name text-white font-mono">
+              <h1 className="hero-name text-white font-mono text-center">
                 Zakaria Al-Alie
               </h1>
 
-              {/* Typewriter - Positioned below right edge of name */}
-              <div className="absolute -bottom-6 sm:-bottom-8 right-0">
+              {/* Typewriter & Resume Link Container */}
+              <div className="mt-4 sm:mt-0 sm:absolute sm:-bottom-12 sm:right-0 text-center sm:text-right">
                 <p className="text-sm sm:text-lg md:text-xl text-gray-300 font-light" style={{ fontFamily: 'Roboto Mono, monospace' }}>
                   {typewriterText}<span className="animate-pulse text-white">|</span>
                 </p>
-              </div>
-
-              {/* Resume Link - Positioned below typewriter */}
-              <div className="absolute -bottom-12 sm:-bottom-16 right-0">
+                <div className="h-2"></div>
                 <a 
                   href="/Zakaria_Al-Alie_Resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs sm:text-sm text-gray-400 hover:text-white transition-colors duration-300 font-light"
+                  className="text-xs sm:text-sm text-gray-400 hover:text-white transition-colors duration-300 font-light inline-block mt-4 sm:mt-2"
                   style={{ fontFamily: 'Roboto Mono, monospace' }}
                 >
                   View Resume →
@@ -85,7 +82,7 @@ const Hero: React.FC = () => {
           </div>
           
           {/* Add spacing for the absolute positioned elements */}
-          <div className="mb-32 h-8"></div>
+          <div className="mb-32 h-16 sm:h-8"></div>
 
           {/* Scroll Down Indicator - centered under name */}
           <div className="flex justify-center">

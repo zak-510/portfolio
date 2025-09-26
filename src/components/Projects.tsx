@@ -58,7 +58,7 @@ const Projects: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-left mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-mono text-white mb-4 cursor-default">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-mono text-white mb-4 cursor-default text-center sm:text-left">
               Featured Projects
             </h2>
           </div>
@@ -66,7 +66,7 @@ const Projects: React.FC = () => {
           <div className="space-y-12">
             {projects.map((project, index) => {
               return (
-                <div key={index} className="grid md:grid-cols-4 gap-x-6">
+                <div key={index} className="grid md:grid-cols-4 gap-x-6 border-b border-white/10 pb-12 md:border-none md:pb-0 last:border-none last:pb-0">
                   {/* Period */}
                   <div className="md:col-span-1 mb-4 md:mb-0">
                     <p className="text-sm text-gray-400 font-mono">{project.period}</p>
