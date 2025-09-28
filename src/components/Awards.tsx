@@ -46,33 +46,31 @@ const Awards = () => {
 
                 {/* Details */}
                 <div className="md:col-span-3">
-                  <div className="flex items-start space-x-4 mb-3">
+                  <div className="flex items-start space-x-4">
                     <div className="flex-shrink-0 pt-1">
                       <img 
                         src={award.logo} 
                         alt={`${award.title} logo`}
-                        className="w-8 h-8 object-contain"
+                        className="w-14 h-14 object-contain"
                       />
                     </div>
                     <div>
-                      <h3 className="text-xl font-medium text-white">
+                      <h3 className="text-xl font-medium text-white mb-1">
                         {award.title}
                       </h3>
+                      <p className="text-gray-300 text-sm leading-relaxed font-light mb-2">
+                        {award.description}
+                      </p>
+                      <a 
+                        href={award.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs text-gray-400 hover:text-white transition-colors duration-300 font-mono group"
+                      >
+                        Learn More <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
+                      </a>
                     </div>
                   </div>
-
-                  <p className="text-gray-300 text-sm leading-relaxed font-light mb-3">
-                    {award.description}
-                  </p>
-
-                  <a 
-                    href={award.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-xs text-gray-400 hover:text-white transition-colors duration-300 font-mono group"
-                  >
-                    Learn More <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
-                  </a>
                 </div>
               </div>
             ))}

@@ -69,7 +69,7 @@ const Education: React.FC = () => {
                        <img 
                         src={edu.logo} 
                         alt={`${edu.school} logo`}
-                        className="w-8 h-8 object-contain"
+                        className="w-14 h-14 object-contain"
                       />
                     </div>
                     <div>

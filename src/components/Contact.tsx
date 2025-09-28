@@ -25,7 +25,7 @@ const Contact: React.FC = () => {
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-mono text-white mb-4 cursor-pointer hover:opacity-80 transition-opacity">
               Get in Touch
             </h2>
-            <p className="text-gray-300 text-lg md:text-xl leading-relaxed font-light text-center mb-8 max-w-4xl mx-auto">
+            <p className="text-gray-300 text-lg md:text-xl leading-relaxed font-light text-center mb-8 max-w-2xl mx-auto">
               I'm currently open to new opportunities and collaborations. Whether you have a project in mind, a question, or just want to say hi, my inbox is always open.
             </p>
             
