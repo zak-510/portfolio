@@ -49,41 +49,64 @@ const Hero: React.FC = () => {
       <div className="container mx-auto px-4 hero-container relative z-10">
         <div className="max-w-5xl mx-auto">
           <div className="relative flex flex-col items-center">
-            {/* Name - Centered with viewport-based sizing */}
-            <div className="relative mb-2 flex flex-col items-center">
-              {/* Greeting - Positioned above and aligned with the Z */}
-              <div className="sm:absolute sm:-top-8" style={{ left: '4px' }}>
-                <p className="text-sm sm:text-lg text-gray-300 font-light" style={{ fontFamily: 'Roboto Mono, monospace' }}>
+
+            {/* --- MOBILE VIEW --- */}
+            <div className="sm:hidden w-full flex flex-col items-center">
+              <div className="relative inline-block">
+                <p className="absolute text-sm text-gray-300 font-light" style={{ fontFamily: 'Roboto Mono, monospace', top: '-1.25rem', left: '0.25rem' }}>
                   Hi, I'm
                 </p>
-              </div>
-
-              <h1 className="hero-name text-white font-mono text-center sm:text-left">
-                Zakaria Al-Alie
-              </h1>
-
-              {/* Typewriter & Resume Link Container */}
-              <div className="mt-4 sm:mt-0 sm:absolute sm:-bottom-16 w-full text-center sm:text-right">
-                <p className="text-sm sm:text-lg md:text-xl text-gray-300 font-light" style={{ fontFamily: 'Roboto Mono, monospace' }}>
-                  {typewriterText}<span className="animate-pulse text-white">|</span>
-                </p>
-                <a 
-                  href="/Zakaria_Al-Alie_Resume.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-xs sm:text-sm text-gray-400 hover:text-white transition-colors duration-300 font-light inline-block mt-2"
-                  style={{ fontFamily: 'Roboto Mono, monospace' }}
-                >
-                  View Resume →
-                </a>
+                <h1 className="hero-name text-white font-mono text-center">
+                  Zakaria Al-Alie
+                </h1>
+                <div className="absolute w-max text-right" style={{ fontFamily: 'Roboto Mono, monospace', bottom: '-3.5rem', right: '0' }}>
+                  <p className="text-sm text-gray-300 font-light">
+                    {typewriterText}<span className="animate-pulse text-white">|</span>
+                  </p>
+                  <a 
+                    href="/Zakaria_Al-Alie_Resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs text-gray-400 hover:text-white transition-colors duration-300 font-light inline-block mt-2"
+                  >
+                    View Resume →
+                  </a>
+                </div>
               </div>
             </div>
+
+            {/* --- DESKTOP VIEW (Original Code) --- */}
+            <div className="hidden sm:block">
+              <div className="relative mb-2 flex flex-col items-center">
+                <div className="sm:absolute sm:-top-8" style={{ left: '4px' }}>
+                  <p className="text-sm sm:text-lg text-gray-300 font-light" style={{ fontFamily: 'Roboto Mono, monospace' }}>
+                    Hi, I'm
+                  </p>
+                </div>
+                <h1 className="hero-name text-white font-mono text-center sm:text-left">
+                  Zakaria Al-Alie
+                </h1>
+                <div className="mt-4 sm:mt-0 sm:absolute sm:-bottom-16 w-full text-center sm:text-right">
+                  <p className="text-sm sm:text-lg md:text-xl text-gray-300 font-light" style={{ fontFamily: 'Roboto Mono, monospace' }}>
+                    {typewriterText}<span className="animate-pulse text-white">|</span>
+                  </p>
+                  <a 
+                    href="/Zakaria_Al-Alie_Resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs sm:text-sm text-gray-400 hover:text-white transition-colors duration-300 font-light inline-block mt-2"
+                    style={{ fontFamily: 'Roboto Mono, monospace' }}
+                  >
+                    View Resume →
+                  </a>
+                </div>
+              </div>
+            </div>
+            
           </div>
           
-          {/* Add spacing for the absolute positioned elements */}
           <div className="mb-32 h-16 sm:h-8"></div>
 
-          {/* Scroll Down Indicator - centered under name */}
           <div className="flex justify-center">
             <button
               onClick={() => document.getElementById('education')?.scrollIntoView({ behavior: 'smooth' })}

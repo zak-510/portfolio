@@ -478,7 +478,7 @@ a:not([class])[href] {
   color: #60a5fa;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   #social-fixed {
     position: fixed;
     bottom: 20px;
@@ -506,6 +506,9 @@ a:not([class])[href] {
   #social-fixed .icon {
     width: 36px;
     height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
