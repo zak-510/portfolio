@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { createPortal } from 'react-dom';
 import { Search, X } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
@@ -13,45 +14,29 @@ const Skills: React.FC = () => {
       skills: [
         { name: "Python", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
         { name: "JavaScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
-        { name: "Java", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" }
+        { name: "SQL", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azuresqldatabase/azuresqldatabase-original.svg" },
+        { name: "TypeScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
+        { name: "C++", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" },
       ]
     },
     {
-      title: "Libraries/Frameworks",
+      title: "Technologies",
       skills: [
         { name: "PyTorch", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" },
+        { name: "TensorFlow", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" },
         { name: "scikit-learn", logo: "https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" },
-        { name: "OpenCV", logo: "https://opencv.org/wp-content/uploads/2020/07/OpenCV_logo_black_.png" },
-        { name: "NumPy", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" },
-        { name: "pandas", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" },
-        { name: "Matplotlib", logo: "https://matplotlib.org/stable/_images/sphx_glr_logos2_003.png" }
-      ]
-    },
-    {
-      title: "Web Technologies",
-      skills: [
-        { name: "React", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-        { name: "Express.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
-        { name: "REST APIs", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" },
-        { name: "Firebase", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" },
-        { name: "HTML", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
-        { name: "CSS", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" }
+        { name: "Hugging Face", logo: "https://huggingface.co/front/assets/huggingface_logo-noborder.svg" },
+        { name: "React.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
       ]
     },
     {
       title: "Tools",
       skills: [
+        { name: "Docker", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
         { name: "Git", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
-        { name: "Jupyter Notebook", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" },
-        { name: "Google Colab", logo: "https://colab.research.google.com/img/colab_favicon_256px.png" },
-        { name: "VS Code", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" }
-      ]
-    },
-    {
-      title: "Databases",
-      skills: [
-        { name: "MySQL", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
-        { name: "NoSQL", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" }
+        { name: "Jupyter", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" },
+        { name: "NumPy", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" },
+        { name: "pandas", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" },
       ]
     }
   ];
@@ -106,63 +91,55 @@ const Skills: React.FC = () => {
             </div>
           </div>
 
+          {/* View Stack Button */}
+          <div className="text-center">
+            <button
+              onClick={() => setShowSkills(true)}
+              className="text-xs sm:text-sm text-gray-400 hover:text-white transition-colors duration-300 font-light inline-block"
+              style={{ fontFamily: 'Roboto Mono, monospace' }}
+            >
+              View Full Stack →
+            </button>
+          </div>
         </div>
       </div>
 
       {/* Skills Overlay Modal */}
-      {showSkills && (
-        <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 p-6">
-          {/* Starry background for modal */}
-          <div className="fixed inset-0 pointer-events-none">
-            <div className="stars-layer opacity-30"></div>
-            <div className="stars-layer opacity-20"></div>
-            {Array.from({ length: 20 }).map((_, i) => (
-              <div
-                key={i}
-                className="particle opacity-60"
-                style={{
-                  left: `${Math.random() * 100}%`,
-                  top: `${Math.random() * 100}%`,
-                  width: `${Math.random() * 3 + 1}px`,
-                  height: `${Math.random() * 3 + 1}px`,
-                  animationDelay: `${Math.random() * 6}s`,
-                  animationDuration: `${Math.random() * 4 + 4}s`,
-                }}
-              />
-            ))}
-          </div>
-          <div className="bg-black/40 backdrop-blur-md border border-white/10 rounded-xl max-w-5xl w-full max-h-[80vh] overflow-y-auto relative animate-fade-in">
+      {showSkills && createPortal(
+        <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-[2000] font-mono">
+          <div className="bg-black/40 backdrop-blur-md border border-white/10 rounded-xl max-w-4xl w-full max-h-[80vh] overflow-y-auto relative animate-fade-in glass">
             {/* Close Button */}
             <button
               onClick={() => setShowSkills(false)}
-              className="absolute top-4 right-4 z-10 p-2 border-2 border-white text-white hover:bg-white hover:text-black rounded-lg transition-all duration-300"
+              className="absolute top-4 right-4 z-10 p-2 text-gray-400 hover:text-white transition-colors"
             >
               <X size={24} />
             </button>
 
-            <div className="p-6">
-              <div className="text-center mb-6">
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
-                  Technologies
+            <div className="p-8">
+              <div className="text-center mb-8">
+                <h3 className="text-3xl font-bold text-white mb-2">
+                  <span className="sm:hidden">Technical<br/>Stack</span>
+                  <span className="hidden sm:inline">Technical Stack</span>
                 </h3>
               </div>
 
               {/* Search Bar */}
-              <div className="relative mb-6 max-w-md mx-auto">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <Search size={20} className="text-gray-400" />
+              <div className="relative mb-8 max-w-md mx-auto">
+                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                  <Search size={20} className="text-gray-500" />
                 </div>
                 <input
                   type="text"
                   placeholder="Search skills..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full pl-10 pr-10 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                  className="w-full pl-12 pr-10 py-3 bg-transparent border border-white/20 rounded-full text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white/30 transition-all duration-300"
                 />
                 {searchTerm && (
                   <button
                     onClick={() => setSearchTerm('')}
-                    className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-white transition-colors"
+                    className="absolute inset-y-0 right-0 pr-4 flex items-center text-gray-400 hover:text-white transition-colors"
                   >
                     <X size={20} />
                   </button>
@@ -170,29 +147,26 @@ const Skills: React.FC = () => {
               </div>
 
               {/* Skills Categories */}
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="space-y-6">
                 {filteredCategories.map((category, categoryIndex) => (
-                  <div
-                    key={categoryIndex}
-                    className="glass rounded-xl p-4 hover:scale-[1.02] transition-all duration-300"
-                  >
-                    <h4 className="text-lg font-bold text-white mb-4">
+                  <div key={categoryIndex}>
+                    <h4 className="text-xl font-semibold text-white mb-4 border-b border-white/10 pb-2">
                       {category.title}
                     </h4>
-                    <div className="space-y-3">
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                       {category.skills.map((skill, skillIndex) => (
                         <div
                           key={skillIndex}
-                          className="flex items-center p-2 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition-all duration-300"
+                          className="flex items-center space-x-3 p-2 rounded-lg hover:bg-white/5 transition-colors"
                         >
-                          <div className="w-8 h-8 rounded-lg bg-gray-700 flex items-center justify-center p-1 mr-3">
+                          <div className="w-8 h-8 flex items-center justify-center">
                             <img
                               src={skill.logo}
                               alt={skill.name}
-                              className="w-full h-full object-contain"
+                              className="w-6 h-6 object-contain"
                             />
                           </div>
-                          <span className="text-white text-sm font-medium">
+                          <span className="text-gray-300 text-sm">
                             {skill.name}
                           </span>
                         </div>
@@ -203,15 +177,16 @@ const Skills: React.FC = () => {
               </div>
 
               {searchTerm && filteredCategories.length === 0 && (
-                <div className="text-center py-6">
-                  <p className="text-gray-400 text-lg">
+                <div className="text-center py-10">
+                  <p className="text-gray-500 text-lg">
                     No skills found matching "{searchTerm}"
                   </p>
                 </div>
               )}
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </section>
   );
