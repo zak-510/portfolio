@@ -7,40 +7,47 @@ const Projects: React.FC = () => {
   
   const projects = [
     {
-      title: "Tumor Classifier",
-      period: "Aug. 2025",
-      description: "Brain tumor classifier using PyTorch and ResNet-18 transfer learning on MRI images achieving 97.9% accuracy across 4 tumor types. Implemented data augmentation, learning rate scheduling, and early stopping.",
-      highlights: [
-        "Evaluation system with separate test sets and performance breakdowns per tumor type",
-        "F1-scores: 96.5%-99.4% across all categories (glioma, meningioma, pituitary, healthy)",
-        "Data augmentation pipeline: rotation, flipping, brightness adjustments for robustness",
-        "Learning rate scheduling and early stopping for optimal training convergence"
+      title: "NeurIPS 2025 Open Polymer Challenge",
+      period: "Oct. 2025",
+      description: [
+        "Built multi-task transformer model (ChemBERTa, 77M parameters) to predict 5 polymer properties (Tg, Tc, Density, Rg, FFV) from SMILES molecular structures",
+        "Achieved R2 = 0.535 & RMSE = 19.53, a 29% improvement over baseline on sparse data (94% missing labels)",
+        "Applied transfer learning from 77M-molecule pretraining with masked loss functions for multi-task regression",
+        "Implemented SMILES augmentation (2–3× data expansion) and mixed-precision training (FP16) for improved model efficiency"
       ],
-      techStack: ["PyTorch", "ResNet-18", "scikit-learn", "NumPy", "OpenCV", "Matplotlib"],
+      techStack: ["PyTorch", "Transformers", "RDKit", "ChemBERTa"],
+      github: "https://github.com/zak-510/neurips-polymer-prediction"
+    },
+    {
+      title: "Neuroimaging for Tumor Diagnosis",
+      period: "Jul. 2025",
+      description: [
+        "Used PyTorch ResNet-18 transfer learning on MRI images, achieving 97.9% accuracy across 4 tumor types",
+        "Achieved F1-scores of 96.5%-99.4% across all categories (glioma, meningioma, pituitary, no_tumor)",
+        "Implemented data augmentation with rotation, flipping, and brightness adjustments along with learning rate scheduling and early stopping"
+      ],
+      techStack: ["PyTorch", "torchvision", "ResNet-18", "scikit-learn", "NumPy", "OpenCV", "Matplotlib"],
       github: "https://github.com/zak-510/bt-mri"
     },
     {
-      title: "xView2 Building Damage Assessment",
-      period: "Jul. 2025",
-      description: "Automated building damage assessment from Maxar satellite imagery using PyTorch, processing 850K+ buildings across 15 countries and 6 disaster types.",
-      highlights: [
-        "U-Net building localization and CNN damage classifier",
-        "84.4% weighted F1 score (92% F1 undamaged, 72% F1 destroyed)",
-        "CUDA-supported inference with evaluation metrics",
-        "Disaster visualizations for humanitarian response"
+      title: "xView2: Building Damage Assessment",
+      period: "Apr. 2025",
+      description: [
+        "Automated building damage assessment on 850K+ buildings across 15 countries using PyTorch",
+        "Built U-Net for localization, CNN for four damage levels (undamaged, minor, major, destroyed)",
+        "Achieved 84.4% weighted F1 (92% undamaged, 72% destroyed)",
+        "Created CUDA-accelerated inference with precision/recall reporting and visualizations"
       ],
       techStack: ["PyTorch", "OpenCV", "NumPy", "pandas", "Matplotlib", "CUDA"],
       github: "https://github.com/zak-510/disaster-classifier"
     },
     {
-      title: "BerkeleyBets, CalHacks Hackathon",
+      title: "BerkeleyBets",
       period: "Jun. 2025",
-      description: "Full-stack sports analytics platform serving 150+ athletes across NBA, NFL, and MLB. Built with React (8 components, 4 pages) and Express.js REST API.",
-      highlights: [
-        "Processed 15,000+ samples from 1,419 player-seasons (2023–2024) using position-specific Random Forest models",
-        "Implemented temporal validation techniques to prevent overfitting in predictive models",
-        "Real-time player lookup system with fuzzy search capabilities (Fuse.js) and dynamic routing",
-        "Predictive analytics dashboard featuring live simulation betting and performance tracking"
+      description: [
+        "Built full-stack sports analytics platform with 150+ NBA, NFL, MLB athletes using React (8 components, 4 pages) and Express.js backend",
+        "Modeled 15K+ samples from 1,419 player-seasons using position-specific Random Forest with temporal validation",
+        "Implemented real-time player lookup with Fuse.js fuzzy search and predictive analytics dashboard"
       ],
       techStack: ["React", "Express.js", "Firebase", "scikit-learn", "Fuse.js", "React Router", "Random Forest"],
       github: "https://github.com/zak-510/BerkeleyBets"
@@ -78,19 +85,26 @@ const Projects: React.FC = () => {
                       <h3 className="text-xl font-medium text-white">
                         {project.title}
                       </h3>
-                      <a 
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-gray-400 hover:text-white transition-colors flex-shrink-0"
-                      >
-                        <Github size={18} />
-                      </a>
+                      {project.github && (
+                        <a 
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-gray-400 hover:text-white transition-colors flex-shrink-0"
+                        >
+                          <Github size={18} />
+                        </a>
+                      )}
                     </div>
                     
-                    <p className="text-gray-300 text-sm leading-relaxed font-light mb-4">
-                      {project.description}
-                    </p>
+                    <ul className="text-gray-300 text-sm leading-relaxed font-light mb-4 space-y-2">
+                      {project.description.map((point, i) => (
+                        <li key={i} className="flex items-start">
+                          <span className="mr-2 mt-1 text-gray-500">•</span>
+                          <span>{point}</span>
+                        </li>
+                      ))}
+                    </ul>
 
                     <div className="flex flex-wrap gap-2">
                       {project.techStack.map((tech, techIndex) => (
