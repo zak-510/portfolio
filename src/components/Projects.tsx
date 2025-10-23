@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github } from 'lucide-react';
+import { Github, ArrowRight } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const Projects: React.FC = () => {
@@ -9,6 +9,7 @@ const Projects: React.FC = () => {
     {
       title: "NeurIPS 2025 Open Polymer Challenge",
       period: "Oct. 2025",
+      summary: "A transformer-based model to predict polymer properties, achieving significant improvement over baselines through transfer learning and data augmentation.",
       description: [
         "Built multi-task transformer model (ChemBERTa, 77M parameters) to predict 5 polymer properties (Tg, Tc, Density, Rg, FFV) from SMILES molecular structures",
         "Achieved R2 = 0.535 & RMSE = 19.53, a 29% improvement over baseline on sparse data (94% missing labels)",
@@ -21,6 +22,7 @@ const Projects: React.FC = () => {
     {
       title: "Neuroimaging for Tumor Diagnosis",
       period: "Jul. 2025",
+      summary: "A transfer learning-based approach for classifying brain tumors from MRI scans, achieving high accuracy and F1-scores across four categories.",
       description: [
         "Used PyTorch ResNet-18 transfer learning on MRI images, achieving 97.9% accuracy across 4 tumor types",
         "Achieved F1-scores of 96.5%-99.4% across all categories (glioma, meningioma, pituitary, no_tumor)",
@@ -32,6 +34,7 @@ const Projects: React.FC = () => {
     {
       title: "xView2: Building Damage Assessment",
       period: "Apr. 2025",
+      summary: "An automated system for assessing building damage from satellite imagery using a U-Net for localization and a CNN for classification.",
       description: [
         "Automated building damage assessment on 850K+ buildings across 15 countries using PyTorch",
         "Built U-Net for localization, CNN for four damage levels (undamaged, minor, major, destroyed)",
@@ -44,6 +47,7 @@ const Projects: React.FC = () => {
     {
       title: "BerkeleyBets",
       period: "Jun. 2025",
+      summary: "A full-stack sports analytics platform that provides predictive analytics for NBA, NFL, and MLB athletes using a Random Forest model.",
       description: [
         "Built full-stack sports analytics platform with 150+ NBA, NFL, MLB athletes using React (8 components, 4 pages) and Express.js backend",
         "Modeled 15K+ samples from 1,419 player-seasons using position-specific Random Forest with temporal validation",
@@ -96,11 +100,16 @@ const Projects: React.FC = () => {
                         </a>
                       )}
                     </div>
+
+                    <p className="text-gray-300 text-sm leading-relaxed font-light mb-4">
+                      {project.summary}
+                    </p>
                     
-                    <ul className="text-gray-300 text-sm leading-relaxed font-light mb-4 space-y-2">
+                    <h4 className="text-gray-200 text-sm font-semibold mb-2">Key Highlights:</h4>
+                    <ul className="text-gray-300 text-sm font-light mb-4 space-y-3">
                       {project.description.map((point, i) => (
                         <li key={i} className="flex items-start">
-                          <span className="mr-2 mt-1 text-gray-500">•</span>
+                          <ArrowRight size={16} className="mr-3 mt-1 text-gray-400 flex-shrink-0" />
                           <span>{point}</span>
                         </li>
                       ))}
