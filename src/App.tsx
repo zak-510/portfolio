@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import Hero from './components/Hero';
 import Education from './components/Education';
 import Awards from './components/Awards';
@@ -105,9 +105,9 @@ function App() {
         <main className="relative z-10">
           <Hero />
           <Education />
+          <Projects />
           <Awards />
           <Skills />
-          <Projects />
           <Contact />
         </main>
       </div>

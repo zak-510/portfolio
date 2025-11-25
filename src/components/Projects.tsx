@@ -9,51 +9,37 @@ const Projects: React.FC = () => {
     {
       title: "NeurIPS 2025 Open Polymer Challenge",
       period: "Oct. 2025",
-      summary: "A transformer-based model to predict polymer properties, achieving significant improvement over baselines through transfer learning and data augmentation.",
+      summary: "Fine-tuned a 77M-parameter ChemBERTa Transformer for polymer property prediction, significantly improving performance over baselines.",
       description: [
-        "Built multi-task transformer model (ChemBERTa, 77M parameters) to predict 5 polymer properties (Tg, Tc, Density, Rg, FFV) from SMILES molecular structures",
-        "Achieved R2 = 0.535 & RMSE = 19.53, a 29% improvement over baseline on sparse data (94% missing labels)",
-        "Applied transfer learning from 77M-molecule pretraining with masked loss functions for multi-task regression",
-        "Implemented SMILES augmentation (2–3× data expansion) and mixed-precision training (FP16) for improved model efficiency"
+        "Fine-tuned a 77M-parameter ChemBERTa Transformer for 5 polymer properties (Tg, Tc, Density, Rg, FFV) on 94% sparse labels, improving weighted R² by 29% over single-task baselines",
+        "Optimized training loop with mixed-precision and batch sizing, achieving 40% faster convergence",
+        "Applied SMILES augmentation to expand training data by 3×, improving validation RMSE by 12%"
       ],
-      techStack: ["PyTorch", "Transformers", "RDKit", "ChemBERTa"],
+      techStack: ["PyTorch", "Transformers", "RDKit"],
       github: "https://github.com/zak-510/neurips-polymer-prediction"
     },
     {
-      title: "Neuroimaging for Tumor Diagnosis",
-      period: "Jul. 2025",
-      summary: "A transfer learning-based approach for classifying brain tumors from MRI scans, achieving high accuracy and F1-scores across four categories.",
-      description: [
-        "Used PyTorch ResNet-18 transfer learning on MRI images, achieving 97.9% accuracy across 4 tumor types",
-        "Achieved F1-scores of 96.5%-99.4% across all categories (glioma, meningioma, pituitary, no_tumor)",
-        "Implemented data augmentation with rotation, flipping, and brightness adjustments along with learning rate scheduling and early stopping"
-      ],
-      techStack: ["PyTorch", "torchvision", "ResNet-18", "scikit-learn", "NumPy", "OpenCV", "Matplotlib"],
-      github: "https://github.com/zak-510/bt-mri"
-    },
-    {
       title: "xView2: Building Damage Assessment",
-      period: "Apr. 2025",
-      summary: "An automated system for assessing building damage from satellite imagery using a U-Net for localization and a CNN for classification.",
+      period: "Jul. 2025",
+      summary: "Scaled inference throughput 12× for building damage assessment using PyTorch and custom batching across 15 countries.",
       description: [
-        "Automated building damage assessment on 850K+ buildings across 15 countries using PyTorch",
-        "Built U-Net for localization, CNN for four damage levels (undamaged, minor, major, destroyed)",
-        "Achieved 84.4% weighted F1 (92% undamaged, 72% destroyed)",
-        "Created CUDA-accelerated inference with precision/recall reporting and visualizations"
+        "Scaled inference throughput 12× (900 → 12,000 tiles/hr) with fp16 and custom batching, processing 850K+ buildings across 15 countries",
+        "Boosted critical “destroyed” detection recall from 70% → 86%, reducing life-critical false negatives by 40%",
+        "Increased GPU utilization from 40% → 95% via optimized data pipelines and automated hyperparameter tuning"
       ],
-      techStack: ["PyTorch", "OpenCV", "NumPy", "pandas", "Matplotlib", "CUDA"],
+      techStack: ["PyTorch", "OpenCV", "CUDA", "pandas"],
       github: "https://github.com/zak-510/disaster-classifier"
     },
     {
-      title: "BerkeleyBets",
+      title: "BerkeleyBets, CalHacks",
       period: "Jun. 2025",
-      summary: "A full-stack sports analytics platform that provides predictive analytics for NBA, NFL, and MLB athletes using a Random Forest model.",
+      summary: "Built a real-time sports analytics platform with sub-300ms latency and high model accuracy using Random Forests.",
       description: [
-        "Built full-stack sports analytics platform with 150+ NBA, NFL, MLB athletes using React (8 components, 4 pages) and Express.js backend",
-        "Modeled 15K+ samples from 1,419 player-seasons using position-specific Random Forest with temporal validation",
-        "Implemented real-time player lookup with Fuse.js fuzzy search and predictive analytics dashboard"
+        "Built real-time sports analytics predictions for NBA, NFL, and MLB with sub-300ms latency",
+        "Boosted model accuracy to 72.8% R² (vs. 0.40 baseline) using position-specific Random Forests",
+        "Cut player lookup latency by 85% with Fuse.js fuzzy search and a dynamic React dashboard"
       ],
-      techStack: ["React", "Express.js", "Firebase", "scikit-learn", "Fuse.js", "React Router", "Random Forest"],
+      techStack: ["scikit-learn", "React", "Express.js"],
       github: "https://github.com/zak-510/BerkeleyBets"
     }
   ];
