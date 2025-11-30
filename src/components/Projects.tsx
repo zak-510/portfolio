@@ -8,8 +8,8 @@ const Projects: React.FC = () => {
   const projects = [
     {
       title: "NeurIPS 2025 Open Polymer Challenge",
-      period: "Oct. 2025",
-      summary: "Fine-tuned a 77M-parameter ChemBERTa Transformer for polymer property prediction, significantly improving performance over baselines.",
+      period: "Aug. 2025",
+      summary: "Fine-tuned a 77M-parameter ChemBERTa Transformer for polymer property prediction.",
       description: [
         "Fine-tuned a 77M-parameter ChemBERTa Transformer for 5 polymer properties (Tg, Tc, Density, Rg, FFV) on 94% sparse labels, improving weighted R² by 29% over single-task baselines",
         "Optimized training loop with mixed-precision and batch sizing, achieving 40% faster convergence",
@@ -24,8 +24,7 @@ const Projects: React.FC = () => {
       summary: "Scaled inference throughput 12× for building damage assessment using PyTorch and custom batching across 15 countries.",
       description: [
         "Scaled inference throughput 12× (900 → 12,000 tiles/hr) with fp16 and custom batching, processing 850K+ buildings across 15 countries",
-        "Boosted critical “destroyed” detection recall from 70% → 86%, reducing life-critical false negatives by 40%",
-        "Increased GPU utilization from 40% → 95% via optimized data pipelines and automated hyperparameter tuning"
+        "Boosted critical “destroyed” detection recall from 70% → 86%, reducing life-critical false negatives by 40%"
       ],
       techStack: ["PyTorch", "OpenCV", "CUDA", "pandas"],
       github: "https://github.com/zak-510/disaster-classifier"
@@ -33,11 +32,11 @@ const Projects: React.FC = () => {
     {
       title: "BerkeleyBets, CalHacks",
       period: "Jun. 2025",
-      summary: "Built a real-time sports analytics platform with sub-300ms latency and high model accuracy using Random Forests.",
+      summary: "Built a real-time sports analytics platform using Random Forests.",
       description: [
         "Built real-time sports analytics predictions for NBA, NFL, and MLB with sub-300ms latency",
         "Boosted model accuracy to 72.8% R² (vs. 0.40 baseline) using position-specific Random Forests",
-        "Cut player lookup latency by 85% with Fuse.js fuzzy search and a dynamic React dashboard"
+        "Cut player lookup latency by 85% with Fuse.js fuzzy search and a React dashboard"
       ],
       techStack: ["scikit-learn", "React", "Express.js"],
       github: "https://github.com/zak-510/BerkeleyBets"
