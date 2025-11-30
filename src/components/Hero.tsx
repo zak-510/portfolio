@@ -63,13 +63,13 @@ const Hero: React.FC = () => {
                   <p className="text-sm text-gray-300 font-light">
                     {typewriterText}<span className="animate-pulse text-white">|</span>
                   </p>
-                  <a 
-                    href="/Zakaria_Al-Alie_Resume.pdf"
+                  <a
+                    href="https://github.com/zak-510"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-xs text-gray-400 hover:text-white transition-colors duration-300 font-light inline-block mt-2"
                   >
-                    View Resume →
+                    View My Work →
                   </a>
                 </div>
               </div>
@@ -90,14 +90,14 @@ const Hero: React.FC = () => {
                   <p className="text-sm sm:text-lg md:text-xl text-gray-300 font-light" style={{ fontFamily: 'Roboto Mono, monospace' }}>
                     {typewriterText}<span className="animate-pulse text-white">|</span>
                   </p>
-                  <a 
-                    href="/Zakaria_Al-Alie_Resume.pdf"
+                  <a
+                    href="https://github.com/zak-510"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-xs sm:text-sm text-gray-400 hover:text-white transition-colors duration-300 font-light inline-block mt-2"
                     style={{ fontFamily: 'Roboto Mono, monospace' }}
                   >
-                    View Resume →
+                    View My Work →
                   </a>
                 </div>
               </div>
