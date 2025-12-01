@@ -14,8 +14,8 @@ const Awards = () => {
     {
       title: "Leaders for Tomorrow Scholarship",
       date: "Aug. 2025 - May 2029",
-      description: "The Leaders for Tomorrow Scholarship is a national award presented by the Annexstad Family Foundation in partnership with UC Berkeley. I was selected as one of two students in my incoming class to receive this scholarship, which recognizes individuals who have demonstrated perseverance in the face of adversity and exceptional leadership potential.",
-      link: "https://annexstadfamilyfoundation.org/pages/scholarship-programs-leaders-for-tomorrow#:~:text=Since%202012%2C%20the%20Leaders%20for,leadership%20potential%20across%20the%20nation.",
+      description: "Chosen as 1 of 2 recipients from 6,740 entering UC Berkeley freshmen, recognizing exceptional leadership, perseverance, and potential for impact.",
+      link: "https://annexstadfamilyfoundation.org/pages/scholarship-programs-leaders-for-tomorrow",
       logo: "/AnnexstadLogo.png"
     }
   ];
