@@ -15,8 +15,7 @@ const Education: React.FC = () => {
         "Foundations of Data Science",
         "Program Structures",
         "Data Structures",
-        "Calculus II",
-        "Linear Algebra and Differential Equations"
+        "Multivariable Calculus"
       ],
       isPlanned: true
     },
@@ -27,11 +26,10 @@ const Education: React.FC = () => {
       gpa: "",
       logo: "/Merritt_College_logo.svg.png",
       courses: [
-        "Applications in Info Security",
+        "Microcomputer Assembly Language",
         "Secure Coding in JAVA and .NET",
-        "Python Application Programming",
-        "Introduction to Computer Programming",
-        "Introduction to Physics"
+        "Applications in Info Security",
+        "Introduction to Computer Programming"
       ],
       isPlanned: false
     }
