@@ -30,13 +30,26 @@ const Contact: React.FC = () => {
             </p>
             
             {/* Say Hello Link */}
-            <button
-              onClick={handleEmailClick}
-              className="text-xs sm:text-sm text-gray-400 hover:text-white transition-colors duration-300 font-light touch-manipulation"
-              style={{ fontFamily: 'Roboto Mono, monospace' }}
-            >
-              Say Hello →
-            </button>
+            <div className="flex flex-row flex-wrap gap-6 items-center justify-center w-full">
+              <button
+                onClick={handleEmailClick}
+                className="text-xs sm:text-sm text-gray-400 hover:text-white transition-colors duration-300 font-light touch-manipulation"
+                style={{ fontFamily: 'Roboto Mono, monospace' }}
+              >
+                Say Hello →
+              </button>
+
+              {/* Clash Royale Link */}
+              <a
+                href="https://link.clashroyale.com/invite/friend/en?tag=J0URGG2YY&token=abbkbg3t&platform=iOS"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs sm:text-sm text-gray-400 hover:text-white transition-colors duration-300 font-light touch-manipulation"
+                style={{ fontFamily: 'Roboto Mono, monospace' }}
+              >
+                Clash Royale →
+              </a>
+            </div>
           </div>
 
 
